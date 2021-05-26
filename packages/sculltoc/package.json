@@ -1,0 +1,16 @@
+{
+    "name": "sculltoc",
+    "description": "Table of content in json format or yaml format.",
+    "version": "0.2.0",
+    "publishConfig": {
+        "access": "public",
+        "tag": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "^15.6.1",
+        "typescript": "^4.2.4"
+    },
+    "scripts": {
+        "prepare": "tsc"
+    }
+}

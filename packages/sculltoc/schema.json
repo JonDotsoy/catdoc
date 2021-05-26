@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "required": [
+        "items"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "title",
+                            "uri"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "description": "Type",
+                                "enum": [
+                                    "item"
+                                ]
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "uri": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "title"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "divider"
+                                ]
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "title",
+                            "items"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "group"
+                                ]
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/properties/items/items"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "additionalItems": false
+        }
+    }
+}
