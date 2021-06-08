@@ -7,7 +7,7 @@ import { MenuElm } from '../components/Menu';
 import { APIDocProps } from '../components/APIDocProps';
 
 export const getStaticProps: GetStaticProps<APIDocProps> = async (context) => {
-    await generalReadPackage.prepareToc();
+    await generalReadPackage.prepare();
 
     return {
         props: {
@@ -22,13 +22,14 @@ export const getStaticProps: GetStaticProps<APIDocProps> = async (context) => {
 const App: FC<APIDocProps> = ({ children, ...props }) => {
     return <APIDocContextProvider {...props}>
         <Layout>
-            <Layout.Header>Header</Layout.Header>
-            <Layout>
-                <Layout.Sider>
-                    <MenuElm></MenuElm>
-                </Layout.Sider>
-                <Layout.Content>Content</Layout.Content>
-            </Layout>
+            <Layout.Content>
+                <Layout>
+                    <Layout.Sider>
+                        <MenuElm></MenuElm>
+                    </Layout.Sider>
+                    <Layout.Content>Content</Layout.Content>
+                </Layout>
+            </Layout.Content>
         </Layout>
     </APIDocContextProvider>;
 }

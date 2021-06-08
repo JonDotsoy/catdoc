@@ -1,0 +1,12 @@
+{
+  "workspaces": [
+    "packages/apidocsparser",
+    "packages/visor"
+  ],
+  "scripts": {
+    "apidocsparser:build": "npm run --workspace packages/apidocsparser build",
+    "apidocsparser:build:watch": "npm run --workspace packages/apidocsparser build:watch",
+    "start:visor": "npm run start --workspace  packages/visor",
+    "dev": "npm run apidocsparser:build:watch & npm run start:visor"
+  }
+}

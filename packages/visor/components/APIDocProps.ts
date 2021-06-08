@@ -1,9 +1,9 @@
 import { TOC } from "sculltoc/schema";
-import { MapItems, TocPlus } from "./TocPlusTypes";
+import { Types } from "apidocsparser";
 
 export interface APIDocProps {
     toc: TOC;
     uris: string[];
-    items: TocPlus[];
-    mapItems: MapItems;
+    items: Types.TocPlus[];
+    mapItems: Types.MapItems;
 }

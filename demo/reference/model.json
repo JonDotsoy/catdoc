@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Car",
+  "properties": {
+    "roles": {
+      "type": "number",
+      "title": "roles",
+      "description": "Roles number"
+    },
+    "color": {
+      "type": "string",
+      "enum": [
+        "red",
+        "green"
+      ]
+    }
+  }
+}

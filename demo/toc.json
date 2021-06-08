@@ -1,35 +1,25 @@
 {
-    "$schema": "https://unpkg.com/sculltoc@0.0.1/schema.json#",
-    "items": [
+  "$schema": "https://unpkg.com/sculltoc@0.0.1/schema.json#",
+  "items": [
+    {
+      "type": "group",
+      "title": "Documentation",
+      "items": [
         {
-            "type": "item",
-            "title": "Hola",
-            "uri": "#asd"
-        },
-        {
-            "type": "item",
-            "title": "Hola2",
-            "uri": "#asd2"
-        },
-        {
-            "type": "divider",
-            "title": "asd"
-        },
-        {
-            "type": "group",
-            "title": "A Group",
-            "items": [
-                {
-                    "type": "item",
-                    "title": "A",
-                    "uri": ""
-                }
-            ]
-        },
-        {
-            "type": "item",
-            "title": "BBBB",
-            "uri": "asad"
+          "type": "item",
+          "title": "How To",
+          "uri": "./docs/howto.md"
         }
-    ]
+      ]
+    },
+    {
+      "type":"divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "Hello",
+      "uri": "./reference/hello.yaml"
+    }
+  ]
 }
