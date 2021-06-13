@@ -21,8 +21,7 @@ paths:
           description: User Found
           content:
             application/json:
-              schema:
-                &a1
+              schema: &a1
                 title: User
                 type: object
                 description: ""
@@ -112,7 +111,8 @@ paths:
                   type: string
                 email:
                   type: string
-                  description: If a new email is given, the user's email verified property will be
+                  description:
+                    If a new email is given, the user's email verified property will be
                     set to false.
                 dateOfBirth:
                   type: string

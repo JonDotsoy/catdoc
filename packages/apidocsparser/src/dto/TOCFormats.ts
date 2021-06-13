@@ -1,5 +1,4 @@
-
 export enum TOCFormats {
-  YAML = 'yaml',
-  JSON = 'json'
+  YAML = "yaml",
+  JSON = "json",
 }

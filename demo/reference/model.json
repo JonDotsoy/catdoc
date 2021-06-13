@@ -10,10 +10,7 @@
     },
     "color": {
       "type": "string",
-      "enum": [
-        "red",
-        "green"
-      ]
+      "enum": ["red", "green"]
     }
   }
 }

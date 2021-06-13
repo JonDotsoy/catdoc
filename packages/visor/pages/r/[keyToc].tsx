@@ -1,24 +1,26 @@
-import { Layout } from "antd";
-import { GetStaticPaths, GetStaticProps } from "next";
-import React, { FC } from "react";
-import { APIDocContextProvider } from "../../components/APIDocContext";
-import { APIDocProps } from "../../components/APIDocProps";
-import { MenuElm } from "../../components/Menu";
-import { generalReadPackage } from "../../components/ReadPackage";
+import { Layout } from "antd"
+import { GetStaticPaths, GetStaticProps } from "next"
+import React, { FC } from "react"
+import { APIDocContextProvider } from "../../components/APIDocContext"
+import { APIDocProps } from "../../components/APIDocProps"
+import { MenuElm } from "../../components/Menu"
+import { generalReadPackage } from "../../components/ReadPackage"
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  await generalReadPackage.prepare();
+  await generalReadPackage.prepare()
 
   return {
     paths: [
-      ...generalReadPackage.mapItems.keysToc.map(keyToc => ({ params: { keyToc } }))
+      ...generalReadPackage.mapItems.keysToc.map((keyToc) => ({
+        params: { keyToc },
+      })),
     ],
     fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps<APIDocProps> = async (context) => {
-  await generalReadPackage.prepareLoadToc();
+  await generalReadPackage.prepareLoadToc()
 
   return {
     props: {
@@ -27,20 +29,22 @@ export const getStaticProps: GetStaticProps<APIDocProps> = async (context) => {
       toc: generalReadPackage.toc,
       uris: generalReadPackage.uris,
     },
-  };
+  }
 }
 
 export const RenderItemToc: FC<APIDocProps> = ({ children, ...props }) => {
-  return <APIDocContextProvider {...props}>
-    <Layout>
+  return (
+    <APIDocContextProvider {...props}>
       <Layout>
-        <Layout.Sider>
-          <MenuElm></MenuElm>
-        </Layout.Sider>
-        <Layout.Content>Content</Layout.Content>
+        <Layout>
+          <Layout.Sider>
+            <MenuElm></MenuElm>
+          </Layout.Sider>
+          <Layout.Content>Content</Layout.Content>
+        </Layout>
       </Layout>
-    </Layout>
-  </APIDocContextProvider>;
+    </APIDocContextProvider>
+  )
 }
 
-export default RenderItemToc;
+export default RenderItemToc

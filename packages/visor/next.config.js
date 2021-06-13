@@ -1,5 +1,5 @@
 module.exports = {
-    serverRuntimeConfig: {
-        pathRepo: '/Users/jondotsoy/repositories/jondotsoy/groooas/demo'
-    },
-};
+  serverRuntimeConfig: {
+    pathRepo: "/Users/jondotsoy/repositories/jondotsoy/groooas/demo",
+  },
+}
