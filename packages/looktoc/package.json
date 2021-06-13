@@ -1,7 +1,7 @@
 {
   "name": "looktoc",
   "description": "Table of content in json format or yaml format.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "schema.js",
   "publishConfig": {
     "access": "public",
