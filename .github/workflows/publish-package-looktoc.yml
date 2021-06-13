@@ -2,18 +2,21 @@ name: Publish package Looktoc
 
 on:
   push:
-    tags: looktoc/v*
-    
+    tags:
+      - looktoc/v*
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  "npm publish":
-    # The type of runner that the job will run on
+  npm-publish:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.3.0"
+      - run: npm install
+        working-directory: packages/looktoc
+      - run: npm publish
+        working-directory: packages/looktoc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
