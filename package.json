@@ -6,7 +6,17 @@
   "scripts": {
     "apidocsparser:build": "npm run --workspace packages/apidocsparser build",
     "apidocsparser:build:watch": "npm run --workspace packages/apidocsparser build:watch",
+    "apidocsparser:test:watch": "npm run --workspace packages/apidocsparser test:watch",
     "start:visor": "npm run start --workspace  packages/visor",
-    "dev": "npm run apidocsparser:build:watch & npm run start:visor"
+    "dev": "npm run apidocsparser:build:watch & npm run start:visor",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "husky": "^6.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "prettier": "2.3.1"
   }
 }

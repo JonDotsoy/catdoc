@@ -40,6 +40,7 @@ describe('ReadPackage', () => {
 
       expect(item).toBeDefined();
       writeFileSync(`${__filename}.demo.yaml`, item!.bodyYaml());
+      writeFileSync(`${__filename}.demo.json`, item!.bodyJson());
     });
   });
 });
