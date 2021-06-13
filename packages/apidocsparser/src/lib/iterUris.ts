@@ -2,6 +2,7 @@ import * as toc from "sculltoc/schema"
 import { MapItems } from "../MapItems"
 import { TocPlus } from "../TocPlusTypes"
 import path from "path"
+import util from "util"
 
 type Options = {
   baseDirectory: string
@@ -36,8 +37,10 @@ export class ReadToc {
   items?: TocPlus.Elements
   #toc: toc.TOC
   mapItems?: MapItems
+  #options: Options
 
-  constructor(toc: toc.TOC, readonly options: Options) {
+  constructor(toc: toc.TOC, options: Options) {
+    this.#options = options
     this.#toc = toc
   }
 
@@ -98,7 +101,7 @@ export class ReadToc {
     keyToc: string,
     item: toc.Item
   ): Promise<TocPlus.Item> {
-    const uri = path.resolve(this.options.baseDirectory, item.uri)
+    const uri = path.resolve(this.#options.baseDirectory, item.uri)
 
     const newItem = new TocPlus.Item(keyToc, item, uri)
     return await newItem.prepare()
@@ -113,21 +116,20 @@ export class ReadToc {
       this.iterUris(item.items, mapItems, keyToc)
     )
 
-    return {
-      _item: item,
-      keyToc,
-      itemsPlus: resultAsyncGenerator.yieldsResult,
-    }
+    return new TocPlus.Group(keyToc, item, resultAsyncGenerator.yieldsResult)
   }
 
   private async transformDivider(
     keyToc: string,
     item: toc.Divider
   ): Promise<TocPlus.Divider> {
-    return {
-      _item: item,
-      keyToc,
-    }
+    return new TocPlus.Divider(keyToc, item)
+  }
+
+  [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
+    return `ReadToc ${util.formatWithOptions(options, {
+      items: this.items,
+    })}`
   }
 
   static loadToc(toc: toc.TOC, options: Options) {

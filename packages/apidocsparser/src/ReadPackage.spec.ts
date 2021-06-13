@@ -44,8 +44,8 @@ describe("ReadPackage", () => {
       const item = readPackage.findItemByKeyToc("$.3")
 
       expect(item).toBeDefined()
-      expect(item!.bodyYaml()).toMatchSnapshot()
-      expect(item!.bodyJson()).toMatchSnapshot()
+      expect(item!.stringifyYaml()).toMatchSnapshot()
+      expect(item!.stringifyJson()).toMatchSnapshot()
     })
   })
 })

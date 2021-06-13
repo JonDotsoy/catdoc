@@ -1,7 +1,8 @@
 {
-  "name": "sculltoc",
+  "name": "looktoc",
   "description": "Table of content in json format or yaml format.",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "main": "schema.js",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
@@ -12,5 +13,13 @@
   },
   "scripts": {
     "prepare": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonDotsoy/visorapi.git",
+    "directory": "packages/looktoc"
   }
 }

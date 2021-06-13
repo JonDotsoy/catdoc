@@ -5,6 +5,7 @@ import { ReadToc } from "./lib/iterUris"
 import path from "path"
 import { TOCFormats } from "./dto/TOCFormats"
 import { TocPlus } from "./TocPlusTypes"
+import util from "util"
 
 export class ReadPackage {
   pathLike: string
@@ -79,8 +80,16 @@ export class ReadPackage {
   findByKeyToc(keyToc: string) {
     return this.toc?.findItemByKeyToc(keyToc)
   }
+
   findItemByKeyToc(keyToc: string) {
     const item = this.toc?.findItemByKeyToc(keyToc)
     if (item instanceof TocPlus.Item) return item
+  }
+
+  [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
+    return `ReadPackage ${util.formatWithOptions(options, {
+      path: path.relative(process.cwd(), this.pathLike),
+      toc: this.toc,
+    })}`
   }
 }

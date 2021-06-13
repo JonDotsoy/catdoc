@@ -4,6 +4,7 @@ import mimeTypes from "mime-types"
 import YAML from "yaml"
 import $RefParser, { dereference } from "json-schema-ref-parser"
 import path from "path"
+import util from "util"
 
 export namespace TocPlus {
   export type Common<T> = {
@@ -36,14 +37,20 @@ export namespace TocPlus {
     get body() {
       return this.#body
     }
-    bodyJson(
+
+    toJSON() {
+      return this.body
+    }
+
+    stringifyJson(
       replacer?: ((this: any, key: string, value: any) => any) | undefined,
       space?: string | number | undefined
     ) {
-      return JSON.stringify(this.#body, replacer, space ?? 2)
+      return JSON.stringify(this.toJSON(), replacer, space ?? 2)
     }
-    bodyYaml(options?: YAML.Options | undefined) {
-      return YAML.stringify(this.#body, options)
+
+    stringifyYaml(options?: YAML.Options | undefined) {
+      return YAML.stringify(this.toJSON(), options)
     }
 
     async readBuffer() {
@@ -105,10 +112,55 @@ export namespace TocPlus {
 
       return res
     }
+
+    [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
+      return `Item ${util.formatWithOptions(options, {
+        keyToc: this.keyToc,
+        uri: path.relative(process.cwd(), this.uri),
+        "content-type": this["content-type"],
+        charset: this.charset,
+        bytes: this.bytes,
+      })}`
+    }
   }
 
-  export type Divider = Common<toc.Divider>
-  export type Group = Common<toc.Group> & { itemsPlus: Element[] }
+  export class Group implements Common<toc.Group> {
+    readonly type = "group"
+    readonly title: string
+
+    constructor(
+      readonly keyToc: string,
+      readonly _item: toc.Group,
+      readonly items: Element[]
+    ) {
+      this.title = _item.title
+    }
+
+    [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
+      return `Group ${util.formatWithOptions(options, {
+        keyToc: this.keyToc,
+        title: this.title,
+        items: this.items,
+      })}`
+    }
+  }
+
+  export class Divider implements Common<toc.Divider> {
+    readonly type = "divider"
+    readonly title: string
+
+    constructor(readonly keyToc: string, readonly _item: toc.Divider) {
+      this.title = _item.title
+    }
+
+    [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
+      return `Group ${util.formatWithOptions(options, {
+        keyToc: this.keyToc,
+        title: this.title,
+      })}`
+    }
+  }
+
   export type Element = Group | Item | Divider
   export type Elements = Element[]
 }

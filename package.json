@@ -12,7 +12,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "jsonthink": "^0.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

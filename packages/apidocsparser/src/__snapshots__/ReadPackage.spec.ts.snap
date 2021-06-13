@@ -678,37 +678,26 @@ exports[`ReadPackage  should parse references 2`] = `
 
 exports[`ReadPackage  should print a detail read package 1`] = `
 "ReadPackage {
-  prepare: [Function (anonymous)],
-  pathLike: '/Users/jondotsoy/repositories/jondotsoy/groooas/demo',
+  path: '../../demo',
   toc: ReadToc {
-    options: {
-      baseDirectory: '/Users/jondotsoy/repositories/jondotsoy/groooas/demo'
-    },
-    mapItems: MapItems {},
     items: [
-      {
-        _item: {
-          type: 'group',
-          title: 'Documentation',
-          items: [ { type: 'item', title: 'How To', uri: './docs/howto.md' } ]
-        },
+      Group {
         keyToc: '$.1',
-        itemsPlus: [
+        title: 'Documentation',
+        items: [
           Item {
             keyToc: '$.1.1',
-            _item: { type: 'item', title: 'How To', uri: './docs/howto.md' },
-            uri: '/Users/jondotsoy/repositories/jondotsoy/groooas/demo/docs/howto.md',
+            uri: '../../demo/docs/howto.md',
             'content-type': 'text/markdown',
             charset: 'UTF-8',
             bytes: 38
           }
         ]
       },
-      { _item: { type: 'divider', title: 'APIS' }, keyToc: '$.2' },
+      Group { keyToc: '$.2', title: 'APIS' },
       Item {
         keyToc: '$.3',
-        _item: { type: 'item', title: 'Hello', uri: './reference/hello.yaml' },
-        uri: '/Users/jondotsoy/repositories/jondotsoy/groooas/demo/reference/hello.yaml',
+        uri: '../../demo/reference/hello.yaml',
         'content-type': 'text/yaml',
         charset: 'UTF-8',
         bytes: 5719

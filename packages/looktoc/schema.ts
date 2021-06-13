@@ -7,7 +7,7 @@ export interface Item {
 export interface Group {
   type: "group"
   title: string
-  items: TOC["items"]
+  items: (Item | Group | Divider)[]
 }
 
 export interface Divider {
@@ -15,6 +15,7 @@ export interface Divider {
   title: string
 }
 
-export interface TOC {
+export interface Looktoc {
+  $schema?: string
   items: (Item | Group | Divider)[]
 }
