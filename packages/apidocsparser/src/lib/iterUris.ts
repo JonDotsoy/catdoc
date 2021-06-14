@@ -1,6 +1,10 @@
-import * as toc from "sculltoc/schema"
+import * as toc from "looktoc/schema"
 import { MapItems } from "../MapItems"
-import { TocPlus } from "../TocPlusTypes"
+import * as TocPlus from "../toc-plus"
+import * as Divider from "../toc-plus/Divider"
+import * as Group from "../toc-plus/Group"
+import * as Item from "../toc-plus/Item"
+import * as createItem from "../toc-plus/createItem"
 import path from "path"
 import util from "util"
 
@@ -35,11 +39,11 @@ const asyncGeneratorToArray = async <
 
 export class ReadToc {
   items?: TocPlus.Elements
-  #toc: toc.TOC
+  #toc: toc.Looktoc
   mapItems?: MapItems
   #options: Options
 
-  constructor(toc: toc.TOC, options: Options) {
+  constructor(toc: toc.Looktoc, options: Options) {
     this.#options = options
     this.#toc = toc
   }
@@ -60,7 +64,7 @@ export class ReadToc {
   }
 
   async *iterUris(
-    items: toc.TOC["items"],
+    items: toc.Looktoc["items"],
     mapItems = new MapItems(),
     parentKey: string = "$"
   ): AsyncGenerator<TocPlus.Element, { mapItems: MapItems }> {
@@ -69,9 +73,11 @@ export class ReadToc {
       n += 1
       const keyToc = `${parentKey}.${n}`
       if (item.type === "item") {
-        const nextItem: TocPlus.Item = await this.transformItem(keyToc, item)
-        mapItems.addItem(nextItem)
-        yield nextItem
+        const nextItem = await this.transformItem(keyToc, item)
+        if (nextItem) {
+          mapItems.addItem(nextItem)
+          yield nextItem
+        }
       }
       if (item.type === "divider") {
         const nextItem: TocPlus.Divider = await this.transformDivider(
@@ -100,11 +106,10 @@ export class ReadToc {
   private async transformItem(
     keyToc: string,
     item: toc.Item
-  ): Promise<TocPlus.Item> {
+  ): Promise<TocPlus.Item | null> {
     const uri = path.resolve(this.#options.baseDirectory, item.uri)
 
-    const newItem = new TocPlus.Item(keyToc, item, uri)
-    return await newItem.prepare()
+    return await createItem.createItem(keyToc, item, uri)
   }
 
   private async transformGroup(
@@ -116,14 +121,14 @@ export class ReadToc {
       this.iterUris(item.items, mapItems, keyToc)
     )
 
-    return new TocPlus.Group(keyToc, item, resultAsyncGenerator.yieldsResult)
+    return new Group.Group(keyToc, item, resultAsyncGenerator.yieldsResult)
   }
 
   private async transformDivider(
     keyToc: string,
     item: toc.Divider
   ): Promise<TocPlus.Divider> {
-    return new TocPlus.Divider(keyToc, item)
+    return new Divider.Divider(keyToc, item)
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
@@ -132,7 +137,7 @@ export class ReadToc {
     })}`
   }
 
-  static loadToc(toc: toc.TOC, options: Options) {
+  static loadToc(toc: toc.Looktoc, options: Options) {
     return new ReadToc(toc, options)
   }
 }

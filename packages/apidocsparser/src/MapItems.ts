@@ -1,5 +1,4 @@
-import * as toc from "sculltoc/schema"
-import { TocPlus } from "./TocPlusTypes"
+import * as TocPlus from "./toc-plus"
 
 export class MapItems {
   #items = new Set<TocPlus.Element>()

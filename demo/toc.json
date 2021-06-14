@@ -20,6 +20,17 @@
       "type": "item",
       "title": "Hello",
       "uri": "./reference/hello.yaml"
+    },
+    {
+      "type": "group",
+      "title": "Pokedex",
+      "items": [
+        {
+          "type": "item",
+          "title": "Read Pokedex",
+          "uri": "./reference/pokedex.yaml"
+        }
+      ]
     }
   ]
 }

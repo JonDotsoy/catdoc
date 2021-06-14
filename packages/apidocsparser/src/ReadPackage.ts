@@ -4,7 +4,8 @@ import once from "lodash/once"
 import { ReadToc } from "./lib/iterUris"
 import path from "path"
 import { TOCFormats } from "./dto/TOCFormats"
-import { TocPlus } from "./TocPlusTypes"
+import * as TocPlus from "./toc-plus"
+import * as Item from "./toc-plus/Item"
 import util from "util"
 
 export class ReadPackage {
@@ -83,7 +84,11 @@ export class ReadPackage {
 
   findItemByKeyToc(keyToc: string) {
     const item = this.toc?.findItemByKeyToc(keyToc)
-    if (item instanceof TocPlus.Item) return item
+    if (item instanceof Item.Item) return item
+  }
+
+  toJSON(): any {
+    return new (class ReadPackage {})()
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {

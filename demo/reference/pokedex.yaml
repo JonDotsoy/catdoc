@@ -1,0 +1,71 @@
+openapi: "3.0.2"
+
+info:
+  title: API Pokemon
+  description: API Pokemon
+  version: "1.0"
+
+components:
+  schemas:
+    PokemonInfo:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        stats:
+          type: object
+          properties:
+            power:
+              type: number
+            life:
+              type: number
+
+    PokedexDescriptor:
+      type: object
+      properties:
+        pokedexId:
+          type: string
+        list:
+          type: array
+          items:
+            $ref: "#/components/schemas/PokemonInfo"
+
+paths:
+  /{playerId}/pokedex:
+    parameters:
+      - name: playerId
+        required: true
+        in: path
+        schema:
+          type: string
+          default: me
+    put:
+      summary: update list pokedex
+      operationId: put-pokedex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PokedexDescriptor"
+
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PokedexDescriptor"
+
+    get:
+      summary: read schema
+      operationId: get-pokedex
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PokedexDescriptor"

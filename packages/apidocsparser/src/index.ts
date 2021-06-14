@@ -1,2 +1,2 @@
-export * as Types from "./TocPlusTypes"
+export * as Types from "./toc-plus"
 export { ReadPackage } from "./ReadPackage"

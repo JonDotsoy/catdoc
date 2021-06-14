@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "prepare": "tsc",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "test": "jest",
@@ -24,8 +25,8 @@
   "dependencies": {
     "json-schema-ref-parser": "^9.0.9",
     "lodash": "^4.17.21",
+    "looktoc": "^0.3.2",
     "mime-types": "^2.1.31",
-    "sculltoc": "^0.2.0",
     "yaml": "^1.10.2"
   }
 }
