@@ -1,7 +1,7 @@
 {
-  "name": "looktoc",
+  "name": "@catdoc/looktoc",
   "description": "Table of content in json format or yaml format.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "schema.js",
   "publishConfig": {
     "access": "public",

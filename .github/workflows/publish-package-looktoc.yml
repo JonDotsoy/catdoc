@@ -3,7 +3,7 @@ name: Publish package Looktoc
 on:
   push:
     tags:
-      - looktoc/v*
+      - "@catdoc/looktoc/v*"
 
 jobs:
   npm-publish:
