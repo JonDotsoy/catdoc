@@ -14,8 +14,11 @@
   "scripts": {
     "prepare": "tsc"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "definition",
+    "toc"
+  ],
+  "author": "Jonathan Delgado <hi@jon.soy> (https://jon.soy)",
   "license": "ISC",
   "repository": {
     "type": "git",
