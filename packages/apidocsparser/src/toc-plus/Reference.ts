@@ -12,30 +12,27 @@ export class Reference extends Item {
   readonly bytes = this.itemReader.bytes
   readonly uri = this.itemReader.uri
   openapiVersion?: string
-  info?: { title?: string; description?: string; version?: string }
-  paths?: {
+  info: { title?: string; description?: string; version?: string }
+  paths: {
     title: string
     description?: string
     path: string
     method: string
   }[]
-  schemas?: {
+  schemas: {
     title: string
   }[]
-  body?: Openapi
+  body: Openapi
 
   constructor(private itemReader: ItemReader) {
     super()
-    this.prepare()
-  }
 
-  prepare() {
     const body =
       typeof this.itemReader.body === "object" &&
       !(this.itemReader.body instanceof Buffer)
         ? (this.itemReader.body as Openapi)
         : null
-    if (!body) return
+    if (!body) throw new Error("cannot found parse")
     this.body = body
     this.openapiVersion = body.openapi
     this.info = body.info
