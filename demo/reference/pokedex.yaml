@@ -8,6 +8,7 @@ info:
 components:
   schemas:
     PokemonInfo:
+      title: asd
       type: object
       properties:
         id:

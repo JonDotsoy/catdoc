@@ -3,7 +3,7 @@ info:
   title: hello2
   version: "1.0"
 servers:
-  - url: http://localhost:3000
+  - url: "http://localhost:3000"
 paths:
   "/users/{userId}":
     parameters:
@@ -21,7 +21,7 @@ paths:
           description: User Found
           content:
             application/json:
-              schema: &a1
+              schema:
                 title: User
                 type: object
                 description: ""
@@ -30,9 +30,9 @@ paths:
                     firstName: Alice
                     lastName: Smith
                     email: alice.smith@gmail.com
-                    dateOfBirth: 1997-10-31
+                    dateOfBirth: "1997-10-31"
                     emailVerified: true
-                    signUpDate: 2019-08-24
+                    signUpDate: "2019-08-24"
                 properties:
                   id:
                     type: integer
@@ -47,7 +47,7 @@ paths:
                   dateOfBirth:
                     type: string
                     format: date
-                    example: 1997-10-31
+                    example: "1997-10-31"
                   emailVerified:
                     type: boolean
                     description: Set to true if the user's email has been verified.
@@ -68,9 +68,9 @@ paths:
                     firstName: Alice
                     lastName: Smith
                     email: alice.smith@gmail.com
-                    dateOfBirth: 1997-10-31
+                    dateOfBirth: "1997-10-31"
                     emailVerified: true
-                    signUpDate: 2019-08-24
+                    signUpDate: "2019-08-24"
         "404":
           description: User Not Found
       operationId: get-users-userId
@@ -83,7 +83,46 @@ paths:
           description: User Updated
           content:
             application/json:
-              schema: *a1
+              schema:
+                title: User
+                type: object
+                description: ""
+                examples:
+                  - id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: "1997-10-31"
+                    emailVerified: true
+                    signUpDate: "2019-08-24"
+                properties:
+                  id:
+                    type: integer
+                    description: Unique identifier for the given user.
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  email:
+                    type: string
+                    format: email
+                  dateOfBirth:
+                    type: string
+                    format: date
+                    example: "1997-10-31"
+                  emailVerified:
+                    type: boolean
+                    description: Set to true if the user's email has been verified.
+                  createDate:
+                    type: string
+                    format: date
+                    description: The date that the user was created.
+                required:
+                  - id
+                  - firstName
+                  - lastName
+                  - email
+                  - emailVerified
               examples:
                 Updated User Rebecca Baker:
                   value:
@@ -91,9 +130,9 @@ paths:
                     firstName: Rebecca
                     lastName: Baker
                     email: rebecca@gmail.com
-                    dateOfBirth: 1985-10-02
+                    dateOfBirth: "1985-10-02"
                     emailVerified: false
-                    createDate: 2019-08-24
+                    createDate: "2019-08-24"
         "404":
           description: User Not Found
         "409":
@@ -111,9 +150,7 @@ paths:
                   type: string
                 email:
                   type: string
-                  description:
-                    If a new email is given, the user's email verified property will be
-                    set to false.
+                  description: "If a new email is given, the user's email verified property will be set to false."
                 dateOfBirth:
                   type: string
             examples:
@@ -126,7 +163,7 @@ paths:
               Update Last Name & Date of Birth:
                 value:
                   lastName: Baker
-                  dateOfBirth: 1985-10-02
+                  dateOfBirth: "1985-10-02"
         description: Patch user properties to update.
   /user:
     post:
@@ -137,7 +174,46 @@ paths:
           description: User Created
           content:
             application/json:
-              schema: *a1
+              schema:
+                title: User
+                type: object
+                description: ""
+                examples:
+                  - id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: "1997-10-31"
+                    emailVerified: true
+                    signUpDate: "2019-08-24"
+                properties:
+                  id:
+                    type: integer
+                    description: Unique identifier for the given user.
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  email:
+                    type: string
+                    format: email
+                  dateOfBirth:
+                    type: string
+                    format: date
+                    example: "1997-10-31"
+                  emailVerified:
+                    type: boolean
+                    description: Set to true if the user's email has been verified.
+                  createDate:
+                    type: string
+                    format: date
+                    description: The date that the user was created.
+                required:
+                  - id
+                  - firstName
+                  - lastName
+                  - email
+                  - emailVerified
               examples:
                 New User Bob Fellow:
                   value:
@@ -145,9 +221,9 @@ paths:
                     firstName: Bob
                     lastName: Fellow
                     email: bob.fellow@gmail.com
-                    dateOfBirth: 1996-08-24
+                    dateOfBirth: "1996-08-24"
                     emailVerified: false
-                    createDate: 2020-11-18
+                    createDate: "2020-11-18"
         "400":
           description: Missing Required Information
         "409":
@@ -178,10 +254,10 @@ paths:
                   firstName: Bob
                   lastName: Fellow
                   email: bob.fellow@gmail.com
-                  dateOfBirth: 1996-08-24
+                  dateOfBirth: "1996-08-24"
         description: Post the necessary fields for the API to create a new user.
       description: Create a new user.
-  /car:
+  "/car/{lk}":
     post:
       summary: Create Car
       operationId: post-car
@@ -191,7 +267,7 @@ paths:
           content:
             application/json:
               schema:
-                $schema: http://json-schema.org/draft-07/schema
+                $schema: "http://json-schema.org/draft-07/schema"
                 type: object
                 title: Car
                 properties:
@@ -204,6 +280,54 @@ paths:
                     enum:
                       - red
                       - green
+      x-internal: true
+      description: hjklhkj
+      deprecated: true
+    parameters:
+      - schema:
+          type: string
+        name: lk
+        in: path
+        required: true
 components:
   schemas:
-    User: *a1
+    User:
+      title: User
+      type: object
+      description: ""
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: "1997-10-31"
+          emailVerified: true
+          signUpDate: "2019-08-24"
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        dateOfBirth:
+          type: string
+          format: date
+          example: "1997-10-31"
+        emailVerified:
+          type: boolean
+          description: Set to true if the user's email has been verified.
+        createDate:
+          type: string
+          format: date
+          description: The date that the user was created.
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified

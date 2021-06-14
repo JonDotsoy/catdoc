@@ -24,7 +24,36 @@ exports[`ReadPackage  should print a detail read package 1`] = `
         uri: '../../demo/reference/hello.yaml',
         'content-type': 'text/yaml',
         charset: 'UTF-8',
-        bytes: 5719
+        bytes: 5719,
+        openapiVersion: '3.1.0',
+        info: { title: 'hello', version: '1.0' },
+        paths: [
+          {
+            path: '/users/{userId}',
+            method: 'get',
+            title: 'Get User Info by User ID',
+            description: 'Retrieve the information of the user with the matching user ID.'
+          },
+          {
+            path: '/users/{userId}',
+            method: 'patch',
+            title: 'Update User Information',
+            description: 'Update the information of an existing user.'
+          },
+          {
+            path: '/user',
+            method: 'post',
+            title: 'Create New User',
+            description: 'Create a new user.'
+          },
+          {
+            path: '/car',
+            method: 'post',
+            title: 'Create Car',
+            description: undefined
+          }
+        ],
+        schemas: [ { title: 'User' } ]
       },
       Group {
         keyToc: '$.4',
@@ -35,7 +64,24 @@ exports[`ReadPackage  should print a detail read package 1`] = `
             uri: '../../demo/reference/pokedex.yaml',
             'content-type': 'text/yaml',
             charset: 'UTF-8',
-            bytes: 1464
+            bytes: 1464,
+            openapiVersion: '3.0.2',
+            info: { title: 'API Pokemon', description: 'API Pokemon', version: '1.0' },
+            paths: [
+              {
+                path: '/{playerId}/pokedex',
+                method: 'put',
+                title: 'update list pokedex',
+                description: undefined
+              },
+              {
+                path: '/{playerId}/pokedex',
+                method: 'get',
+                title: 'read schema',
+                description: undefined
+              }
+            ],
+            schemas: [ { title: 'PokemonInfo' }, { title: 'PokedexDescriptor' } ]
           }
         ]
       }
