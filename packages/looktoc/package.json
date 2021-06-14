@@ -1,7 +1,7 @@
 {
   "name": "@catdoc/looktoc",
   "description": "Table of content in json format or yaml format.",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "main": "schema.js",
   "publishConfig": {
     "access": "public",
@@ -28,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/JonDotsoy/catdoc/issues"
   },
-  "homepage": "https://github.com/JonDotsoy/catdoc#readme"
+  "homepage": "https://github.com/JonDotsoy/catdoc/tree/HEAD/packages/looktoc#readme"
 }
