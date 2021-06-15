@@ -1,12 +1,14 @@
 name: Publish package Looktoc
 
 on:
-  push:
+  release:
     tags:
       - "@catdoc/looktoc/v*"
+    types:
+      - published
 
 jobs:
-  npm-publish:
+  publish-npm:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,9 +16,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16.3.0"
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-        working-directory: packages/looktoc
-      - run: npm install
+      # - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      #   working-directory: packages/looktoc
+      - run: npm ci
         working-directory: packages/looktoc
       - run: npm publish
         working-directory: packages/looktoc
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
