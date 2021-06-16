@@ -3,26 +3,91 @@ import util from "util"
 import { Item } from "./Item"
 import fs from "fs/promises"
 import marked, { Token, TokensList } from "marked"
-import { values } from "lodash"
-import { link } from "fs"
 
-function walkTokens(tokens: Token[], fn: (this: Token, token: Token) => void) {
-  tokens.forEach((token) => {
-    fn.apply(token, [token])
-    if ("tokens" in token && token.tokens) walkTokens(token.tokens, fn)
-    if ("items" in token && token.items) walkTokens(token.items, fn)
-  })
+export type DocumentationToken = Token & { tokens?: DocumentationToken[] }
+
+function walkTokens(
+  tokens: DocumentationToken[],
+  fn: (this: DocumentationToken, token: DocumentationToken) => void
+) {
+  if (Array.isArray(tokens)) {
+    tokens.forEach((token) => {
+      fn.apply(token, [token])
+      if ("tokens" in token && token.tokens) walkTokens(token.tokens, fn)
+      if ("items" in token && token.items) walkTokens(token.items, fn)
+    })
+  }
 }
 
 function resolveHref(from: string, to: string) {
-  if (/https?\:\/\//i.test(to)) return to
+  if (/^(https?\:\/\/|\#)/i.test(to)) return to
   const dotHref = to.startsWith("../") || to.startsWith("./") ? to : `./${to}`
   return path.join(from, dotHref)
 }
 
+const isToken = (v: any): v is DocumentationToken =>
+  typeof v === "object" &&
+  typeof v.type === "string" &&
+  typeof v.raw === "string"
+
+function linkToMd(key: string, linkBody: any): any {
+  return `[${key}]: ${
+    linkBody.title ? `${linkBody.href} "${linkBody.title}"` : linkBody.href
+  }\n`
+}
+
+function tokenToMd(token: any): any {
+  if (isToken(token)) {
+    const tokensMd = (bodyDefault?: string) =>
+      token.tokens?.map(tokenToMd).join("") ?? bodyDefault ?? ""
+    const endLine = () => /(\n+)$/.exec(token.raw)?.[1] ?? "\n"
+    const captureSymbol = () =>
+      /^(\~{1,2}|\_{1,2}|\*{1,2})/.exec(token.raw)?.[1] ?? "_"
+
+    switch (token.type) {
+      case "heading":
+        return `${"#".repeat(token.depth)} ${tokensMd(token.text)}${endLine()}`
+      case "link":
+        return `[${tokensMd(token.text)}](${
+          token.title ? `${token.href} "${token.title}"` : token.href
+        })`
+      case "image":
+        return `![${tokensMd(token.text)}](${
+          token.title ? `${token.href} "${token.title}"` : token.href
+        })`
+      case "paragraph":
+        return tokensMd()
+      case "list":
+        return token.items.map(tokenToMd).join("")
+      case "list_item":
+        return `- ${tokensMd()}${endLine()}`
+      case "em":
+      case "del":
+      case "strong":
+        return `${captureSymbol()}${tokensMd()}${captureSymbol()}`
+      case "blockquote":
+        return token.tokens
+          ?.map(
+            (token) => `> ${token.tokens?.map(tokenToMd).join("") ?? ""} end\n`
+          )
+          .join("")
+
+      case "text":
+      case "space":
+      case "codespan":
+      case "code":
+      case "hr":
+        return token.raw
+    }
+  }
+
+  return ""
+}
+
 export class Documentation extends Item {
-  tokens?: Token[]
+  tokens?: DocumentationToken[]
   html?: string
+  links?: TokensList["links"]
 
   async prepare() {
     const payloadMd = await fs.readFile(this.uri, this.charset)
@@ -38,21 +103,17 @@ export class Documentation extends Item {
     })
 
     this.tokens = tokens
-
-    this.html = marked.parser(tokens, {
-      headerIds: true,
-      baseUrl: "local",
-    })
+    this.links = tokens.links
 
     return this
   }
 
-  toMarkdown() {
-    return this.tokens?.map((token) => token.raw).join("")
-  }
-
   toJSON(): any {
-    return new (class Documentation {})()
+    return {
+      $$type: "Documentation",
+      tokens: this.tokens,
+      links: this.links,
+    }
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
@@ -63,7 +124,7 @@ export class Documentation extends Item {
       charset: this.charset,
       bytes: this.bytes,
       tokens: this.tokens,
-      html: this.html,
+      links: this.links,
     })}`
   }
 }

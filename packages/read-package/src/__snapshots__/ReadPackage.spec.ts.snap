@@ -14,14 +14,37 @@ exports[`ReadPackage  should print a detail read package 1`] = `
             uri: '../../demo/docs/howto.md',
             contentType: 'text/markdown',
             charset: 'utf-8',
-            bytes: 518,
+            bytes: 586,
             tokens: [
               {
                 type: 'heading',
-                raw: '# How To\\\\n\\\\n',
+                raw: '# How To\\\\n',
                 depth: 1,
                 text: 'How To',
                 tokens: [ { type: 'text', raw: 'How To', text: 'How To' } ]
+              },
+              {
+                type: 'heading',
+                raw: '## Title [a link on header](#demo-3-images)\\\\n\\\\n',
+                depth: 2,
+                text: 'Title [a link on header](#demo-3-images)',
+                tokens: [
+                  { type: 'text', raw: 'Title ', text: 'Title ' },
+                  {
+                    type: 'link',
+                    raw: '[a link on header](#demo-3-images)',
+                    href: '#demo-3-images',
+                    title: null,
+                    text: 'a link on header',
+                    tokens: [
+                      {
+                        type: 'text',
+                        raw: 'a link on header',
+                        text: 'a link on header'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 type: 'paragraph',
@@ -55,9 +78,9 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               { type: 'space', raw: '\\\\n\\\\n' },
               {
                 type: 'code',
-                raw: '\`\`\`json\\\\n{\\"a\\":\\"b\\"}\\\\n\`\`\`\\\\n\\\\n',
+                raw: '\`\`\`json\\\\n{ \\"a\\": \\"b\\" }\\\\n\`\`\`\\\\n\\\\n',
                 lang: 'json',
-                text: '{\\"a\\":\\"b\\"}'
+                text: '{ \\"a\\": \\"b\\" }'
               },
               { type: 'hr', raw: '---\\\\n\\\\n' },
               {
@@ -89,14 +112,16 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               { type: 'space', raw: '\\\\n\\\\n' },
               {
                 type: 'list',
-                raw: '- Hola [My Link](http://sample.com/abc/def \\"a title\\")\\\\n\\\\n\\\\n',
+                raw: '- Hola [My Link](http://sample.com/abc/def \\"a title\\")\\\\n' +
+                  '- Second Item on List\\\\n' +
+                  '\\\\n',
                 ordered: false,
                 start: '',
                 loose: false,
                 items: [
                   {
                     type: 'list_item',
-                    raw: '- Hola [My Link](http://sample.com/abc/def \\"a title\\")\\\\n\\\\n\\\\n',
+                    raw: '- Hola [My Link](http://sample.com/abc/def \\"a title\\")\\\\n',
                     task: false,
                     checked: undefined,
                     loose: false,
@@ -115,6 +140,28 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                             title: 'a title',
                             text: 'My Link',
                             tokens: [ { type: 'text', raw: 'My Link', text: 'My Link' } ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'list_item',
+                    raw: '- Second Item on List\\\\n\\\\n',
+                    task: false,
+                    checked: undefined,
+                    loose: false,
+                    text: 'Second Item on List',
+                    tokens: [
+                      {
+                        type: 'text',
+                        raw: 'Second Item on List',
+                        text: 'Second Item on List',
+                        tokens: [
+                          {
+                            type: 'text',
+                            raw: 'Second Item on List',
+                            text: 'Second Item on List'
                           }
                         ]
                       }
@@ -300,33 +347,7 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               links: [Object: null prototype] {
                 reflink: { href: './assets/cat-02.png', title: 'das' }
               }
-            ],
-            html: '<h1 id=\\"undefinedhow-to\\">How To</h1>\\\\n' +
-              '<p>This is a demo &quot;How To Doc&quot;</p>\\\\n' +
-              '<p>new Line <code>code</code></p>\\\\n' +
-              '<p>demo code</p>\\\\n' +
-              '<pre><code class=\\"undefinedjson\\">{&quot;a&quot;:&quot;b&quot;}\\\\n' +
-              '</code></pre>\\\\n' +
-              '<hr>\\\\n' +
-              '<h2 id=\\"undefineddemo-2\\">Demo 2</h2>\\\\n' +
-              '<p>Demo code 2</p>\\\\n' +
-              '<pre><code class=\\"undefinedcode-write\\">{&quot;a&quot;:&quot;b&quot;}\\\\n' +
-              '</code></pre>\\\\n' +
-              '<p>Menu:</p>\\\\n' +
-              '<ul>\\\\n' +
-              '<li>Hola <a href=\\"http://sample.com/abc/def\\" title=\\"a title\\">My Link</a></li>\\\\n' +
-              '</ul>\\\\n' +
-              '<h2 id=\\"undefineddemo-3-images\\">Demo 3 Images</h2>\\\\n' +
-              '<p><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/assets/cat-01.png\\" alt=\\"A Cat\\" title=\\"a text\\"></p>\\\\n' +
-              '<p><em>second cat</em></p>\\\\n' +
-              '<p><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"A Cat 2a\\" title=\\"a text to cat 2a\\"></p>\\\\n' +
-              '<p><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"A Cat 2b\\" title=\\"a text to cat 2b\\"></p>\\\\n' +
-              '<ul>\\\\n' +
-              '<li><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"a link 1\\" title=\\"das\\"></li>\\\\n' +
-              '<li><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"a link 2\\" title=\\"das\\"></li>\\\\n' +
-              '<li><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"a link 3\\" title=\\"das\\"></li>\\\\n' +
-              '<li><img src=\\"/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png\\" alt=\\"a link 4\\" title=\\"das\\"></li>\\\\n' +
-              '</ul>\\\\n'
+            ]
           }
         ]
       },
