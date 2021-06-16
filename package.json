@@ -1,14 +1,14 @@
 {
   "workspaces": [
-    "packages/apidocsparser",
+    "packages/read-package",
     "packages/visor"
   ],
   "scripts": {
-    "apidocsparser:build": "npm run --workspace packages/apidocsparser build",
-    "apidocsparser:build:watch": "npm run --workspace packages/apidocsparser build:watch",
-    "apidocsparser:test:watch": "npm run --workspace packages/apidocsparser test:watch",
+    "read-package:build": "npm run --workspace packages/read-package build",
+    "read-package:build:watch": "npm run --workspace packages/read-package build:watch",
+    "read-package:test:watch": "npm run --workspace packages/read-package test:watch",
     "start:visor": "npm run start --workspace  packages/visor",
-    "dev": "npm run apidocsparser:build:watch & npm run start:visor",
+    "dev": "npm run read-package:build:watch & npm run start:visor",
     "prepare": "husky install"
   },
   "dependencies": {

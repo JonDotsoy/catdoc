@@ -1,4 +1,4 @@
-import * as toc from "looktoc/schema"
+import * as toc from "@catdoc/looktoc/schema"
 import { MapItems } from "../MapItems"
 import * as TocPlus from "../toc-plus"
 import * as Divider from "../toc-plus/Divider"

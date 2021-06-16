@@ -1,7 +1,7 @@
 {
-  "name": "apidocsparser",
+  "name": "@catdoc/read-package",
   "version": "1.0.0",
-  "description": "",
+  "description": "read package and parse api definition and documentation",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "tsc",
@@ -16,17 +16,28 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/lodash": "^4.14.170",
+    "@types/markdown-it": "^12.0.2",
+    "@types/markdown-it-container": "^2.0.3",
     "@types/mime-types": "^2.1.0",
     "@types/node": "^15.6.1",
+    "@types/react-dom": "^17.0.7",
     "jest": "^27.0.1",
     "ts-jest": "^27.0.1",
     "typescript": "^4.3.2"
   },
   "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "@catdoc/looktoc": "^0.3.2",
+    "@types/marked": "^2.0.3",
     "json-schema-ref-parser": "^9.0.9",
     "lodash": "^4.17.21",
-    "looktoc": "^0.3.2",
+    "markdown-it": "^12.0.6",
+    "markdown-it-container": "^3.0.0",
+    "markdown-to-jsx": "^7.1.3",
+    "marked": "^2.1.0",
     "mime-types": "^2.1.31",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "yaml": "^1.10.2"
   }
 }

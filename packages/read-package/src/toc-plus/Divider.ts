@@ -1,29 +1,23 @@
-import * as toc from "looktoc/schema"
+import * as toc from "@catdoc/looktoc/schema"
 import util from "util"
 import { Common } from "./Common"
-import { Element } from "."
 
-export class Group implements Common<toc.Group> {
-  readonly type = "group"
+export class Divider implements Common<toc.Divider> {
+  readonly type = "divider"
   readonly title: string
 
-  constructor(
-    readonly keyToc: string,
-    readonly _item: toc.Group,
-    readonly items: Element[]
-  ) {
+  constructor(readonly keyToc: string, readonly _item: toc.Divider) {
     this.title = _item.title
   }
 
   toJSON(): any {
-    return new (class Group {})()
+    return new (class Divider {})()
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
     return `Group ${util.formatWithOptions(options, {
       keyToc: this.keyToc,
       title: this.title,
-      items: this.items,
     })}`
   }
 }

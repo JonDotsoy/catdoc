@@ -1,15 +1,17 @@
 /**
  * Validation schema for OpenAPI Specification 3.0.X.
  */
-export interface Openapi {
+export interface OpenAPISpecification {
   components?: Components
-  externalDocs?: ExternalDocumentation
+  externalDocs?: OpenAPISpecificationExternalDocs
   info: Info
+  jsonSchemaDialect?: string
   openapi: string
-  paths: Paths
+  paths?: { [key: string]: any }
   security?: { [key: string]: string[] }[]
-  servers?: Server[]
-  tags?: Tag[]
+  servers?: ServerElement[]
+  tags?: TagElement[]
+  webhooks?: { [key: string]: any }
 }
 
 export interface Components {
@@ -18,13 +20,14 @@ export interface Components {
   headers?: { [key: string]: any }
   links?: { [key: string]: any }
   parameters?: { [key: string]: any }
+  pathItems?: { [key: string]: any }
   requestBodies?: { [key: string]: any }
   responses?: { [key: string]: any }
   schemas?: { [key: string]: any }
   securitySchemes?: { [key: string]: any }
 }
 
-export interface ExternalDocumentation {
+export interface OpenAPISpecificationExternalDocs {
   description?: string
   url: string
 }
@@ -33,6 +36,7 @@ export interface Info {
   contact?: Contact
   description?: string
   license?: License
+  summary?: string
   termsOfService?: string
   title: string
   version: string
@@ -45,28 +49,30 @@ export interface Contact {
 }
 
 export interface License {
+  identifier?: string
   name: string
   url?: string
 }
 
-export interface Paths {
-  [key: string]: any
-}
-
-export interface Server {
+export interface ServerElement {
   description?: string
   url: string
-  variables?: { [key: string]: ServerVariable }
+  variables?: { [key: string]: VariableValue }
 }
 
-export interface ServerVariable {
+export interface VariableValue {
   default: string
-  description?: string
+  descriptions?: string
   enum?: string[]
 }
 
-export interface Tag {
+export interface TagElement {
   description?: string
-  externalDocs?: ExternalDocumentation
+  externalDocs?: TagExternalDocs
   name: string
+}
+
+export interface TagExternalDocs {
+  description?: string
+  url: string
 }
