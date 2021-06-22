@@ -357,7 +357,8 @@ toc:
                     links: {}
                   content:
                     application/json:
-                      schema: &a1
+                      schema:
+                        &a1
                         title: User
                         type: object
                         description:
@@ -566,19 +567,15 @@ toc:
                             typeItem: documentation
                             tokens:
                               - type: paragraph
-                                raw:
-                                  If a new email is given, the user's email verified property will be set to
+                                raw: If a new email is given, the user's email verified property will be set to
                                   false.
-                                text:
-                                  If a new email is given, the user's email verified property will be set to
+                                text: If a new email is given, the user's email verified property will be set to
                                   false.
                                 tokens:
                                   - type: text
-                                    raw:
-                                      If a new email is given, the user's email verified property will be set to
+                                    raw: If a new email is given, the user's email verified property will be set to
                                       false.
-                                    text:
-                                      If a new email is given, the user&#39;s email verified property will be
+                                    text: If a new email is given, the user&#39;s email verified property will be
                                       set to false.
                             links: {}
                         dateOfBirth:
@@ -796,7 +793,8 @@ toc:
               version: "1.0"
             components:
               schemas:
-                PokemonInfo: &a2
+                PokemonInfo:
+                  &a2
                   title: asd
                   type: object
                   properties:
@@ -811,7 +809,8 @@ toc:
                           type: number
                         life:
                           type: number
-                PokedexDescriptor: &a3
+                PokedexDescriptor:
+                  &a3
                   type: object
                   properties:
                     pokedexId:
