@@ -1,7 +1,10 @@
 import { ReadPackage } from "./ReadPackage"
 import util from "util"
+import path from "path"
 import * as TocPlus from "./toc-plus"
 import * as Item from "./toc-plus/Item"
+import YAML from "yaml"
+import { writeFileSync } from "fs"
 
 const format = (format?: any, ...param: any[]) =>
   util.formatWithOptions(
@@ -39,7 +42,16 @@ describe("ReadPackage", () => {
 
       expect(format(readPackage)).toMatchSnapshot()
       expect(readPackage).toMatchSnapshot()
-      expect(JSON.stringify(readPackage)).toMatchSnapshot()
+      expect(YAML.stringify(readPackage)).toMatchSnapshot()
+    })
+
+    it("should export catdoc file", async () => {
+      const readPackage = await ReadPackage.readPackage(pathDemoRepo).prepare()
+
+      writeFileSync(
+        `${__dirname}/__snapshots__/${path.basename(__filename)}.out.yaml`,
+        YAML.stringify(readPackage)
+      )
     })
 
     it("should parse references", async () => {
@@ -48,8 +60,6 @@ describe("ReadPackage", () => {
       const item = readPackage.findItemByKeyToc("$.3")
 
       expect(item).toBeDefined()
-      // expect(item!.stringifyYaml()).toMatchSnapshot()
-      // expect(item!.stringifyJson()).toMatchSnapshot()
     })
   })
 })

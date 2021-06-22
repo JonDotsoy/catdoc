@@ -131,6 +131,12 @@ export class ReadToc {
     return new Divider.Divider(keyToc, item)
   }
 
+  toJSON() {
+    return {
+      items: this.items,
+    }
+  }
+
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
     return `ReadToc ${util.formatWithOptions(options, {
       items: this.items,

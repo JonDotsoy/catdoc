@@ -14,11 +14,11 @@ exports[`ReadPackage  should print a detail read package 1`] = `
             uri: '../../demo/docs/howto.md',
             contentType: 'text/markdown',
             charset: 'utf-8',
-            bytes: 586,
+            bytes: 587,
             tokens: [
               {
                 type: 'heading',
-                raw: '# How To\\\\n',
+                raw: '# How To\\\\n\\\\n',
                 depth: 1,
                 text: 'How To',
                 tokens: [ { type: 'text', raw: 'How To', text: 'How To' } ]
@@ -347,7 +347,10 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               links: [Object: null prototype] {
                 reflink: { href: './assets/cat-02.png', title: 'das' }
               }
-            ]
+            ],
+            links: [Object: null prototype] {
+              reflink: { href: './assets/cat-02.png', title: 'das' }
+            }
           }
         ]
       },
@@ -370,7 +373,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                   name: 'userId',
                   in: 'path',
                   required: true,
-                  description: 'Id of an existing user.'
+                  description: Documentation {
+                    keyToc: '$.3',
+                    uri: '../../demo/reference/hello.yaml',
+                    contentType: 'text/yaml',
+                    charset: 'utf-8',
+                    bytes: 5719,
+                    tokens: [
+                      {
+                        type: 'paragraph',
+                        raw: 'Id of an existing user.',
+                        text: 'Id of an existing user.',
+                        tokens: [
+                          {
+                            type: 'text',
+                            raw: 'Id of an existing user.',
+                            text: 'Id of an existing user.'
+                          }
+                        ]
+                      },
+                      links: [Object: null prototype] {}
+                    ],
+                    links: [Object: null prototype] {}
+                  }
                 }
               ],
               get: {
@@ -378,13 +403,37 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                 tags: [],
                 responses: {
                   '200': {
-                    description: 'User Found',
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'User Found',
+                          text: 'User Found',
+                          tokens: [ { type: 'text', raw: 'User Found', text: 'User Found' } ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    },
                     content: {
                       'application/json': {
                         schema: {
                           title: 'User',
                           type: 'object',
-                          description: '',
+                          description: Documentation {
+                            keyToc: '$.3',
+                            uri: '../../demo/reference/hello.yaml',
+                            contentType: 'text/yaml',
+                            charset: 'utf-8',
+                            bytes: 5719,
+                            tokens: [ links: [Object: null prototype] {} ],
+                            links: [Object: null prototype] {}
+                          },
                           examples: [
                             {
                               id: 142,
@@ -399,7 +448,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                           properties: {
                             id: {
                               type: 'integer',
-                              description: 'Unique identifier for the given user.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'Unique identifier for the given user.',
+                                    text: 'Unique identifier for the given user.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'Unique identifier for the given user.',
+                                        text: 'Unique identifier for the given user.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             firstName: { type: 'string' },
                             lastName: { type: 'string' },
@@ -411,12 +482,56 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                             },
                             emailVerified: {
                               type: 'boolean',
-                              description: \\"Set to true if the user's email has been verified.\\"
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: \\"Set to true if the user's email has been verified.\\",
+                                    text: \\"Set to true if the user's email has been verified.\\",
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: \\"Set to true if the user's email has been verified.\\",
+                                        text: 'Set to true if the user&#39;s email has been verified.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             createDate: {
                               type: 'string',
                               format: 'date',
-                              description: 'The date that the user was created.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'The date that the user was created.',
+                                    text: 'The date that the user was created.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'The date that the user was created.',
+                                        text: 'The date that the user was created.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             }
                           },
                           required: [
@@ -443,23 +558,89 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                       }
                     }
                   },
-                  '404': { description: 'User Not Found' }
+                  '404': {
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'User Not Found',
+                          text: 'User Not Found',
+                          tokens: [
+                            { type: 'text', raw: 'User Not Found', text: 'User Not Found' }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
+                  }
                 },
                 operationId: 'get-users-userId',
-                description: 'Retrieve the information of the user with the matching user ID.'
+                description: Documentation {
+                  keyToc: '$.3',
+                  uri: '../../demo/reference/hello.yaml',
+                  contentType: 'text/yaml',
+                  charset: 'utf-8',
+                  bytes: 5719,
+                  tokens: [
+                    {
+                      type: 'paragraph',
+                      raw: 'Retrieve the information of the user with the matching user ID.',
+                      text: 'Retrieve the information of the user with the matching user ID.',
+                      tokens: [
+                        {
+                          type: 'text',
+                          raw: 'Retrieve the information of the user with the matching user ID.',
+                          text: 'Retrieve the information of the user with the matching user ID.'
+                        }
+                      ]
+                    },
+                    links: [Object: null prototype] {}
+                  ],
+                  links: [Object: null prototype] {}
+                }
               },
               patch: {
                 summary: 'Update User Information',
                 operationId: 'patch-users-userId',
                 responses: {
                   '200': {
-                    description: 'User Updated',
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'User Updated',
+                          text: 'User Updated',
+                          tokens: [ { type: 'text', raw: 'User Updated', text: 'User Updated' } ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    },
                     content: {
                       'application/json': {
                         schema: {
                           title: 'User',
                           type: 'object',
-                          description: '',
+                          description: Documentation {
+                            keyToc: '$.3',
+                            uri: '../../demo/reference/hello.yaml',
+                            contentType: 'text/yaml',
+                            charset: 'utf-8',
+                            bytes: 5719,
+                            tokens: [ links: [Object: null prototype] {} ],
+                            links: [Object: null prototype] {}
+                          },
                           examples: [
                             {
                               id: 142,
@@ -474,7 +655,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                           properties: {
                             id: {
                               type: 'integer',
-                              description: 'Unique identifier for the given user.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'Unique identifier for the given user.',
+                                    text: 'Unique identifier for the given user.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'Unique identifier for the given user.',
+                                        text: 'Unique identifier for the given user.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             firstName: { type: 'string' },
                             lastName: { type: 'string' },
@@ -486,12 +689,56 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                             },
                             emailVerified: {
                               type: 'boolean',
-                              description: \\"Set to true if the user's email has been verified.\\"
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: \\"Set to true if the user's email has been verified.\\",
+                                    text: \\"Set to true if the user's email has been verified.\\",
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: \\"Set to true if the user's email has been verified.\\",
+                                        text: 'Set to true if the user&#39;s email has been verified.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             createDate: {
                               type: 'string',
                               format: 'date',
-                              description: 'The date that the user was created.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'The date that the user was created.',
+                                    text: 'The date that the user was created.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'The date that the user was created.',
+                                        text: 'The date that the user was created.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             }
                           },
                           required: [
@@ -518,10 +765,76 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                       }
                     }
                   },
-                  '404': { description: 'User Not Found' },
-                  '409': { description: 'Email Already Taken' }
+                  '404': {
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'User Not Found',
+                          text: 'User Not Found',
+                          tokens: [
+                            { type: 'text', raw: 'User Not Found', text: 'User Not Found' }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
+                  },
+                  '409': {
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'Email Already Taken',
+                          text: 'Email Already Taken',
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: 'Email Already Taken',
+                              text: 'Email Already Taken'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
+                  }
                 },
-                description: 'Update the information of an existing user.',
+                description: Documentation {
+                  keyToc: '$.3',
+                  uri: '../../demo/reference/hello.yaml',
+                  contentType: 'text/yaml',
+                  charset: 'utf-8',
+                  bytes: 5719,
+                  tokens: [
+                    {
+                      type: 'paragraph',
+                      raw: 'Update the information of an existing user.',
+                      text: 'Update the information of an existing user.',
+                      tokens: [
+                        {
+                          type: 'text',
+                          raw: 'Update the information of an existing user.',
+                          text: 'Update the information of an existing user.'
+                        }
+                      ]
+                    },
+                    links: [Object: null prototype] {}
+                  ],
+                  links: [Object: null prototype] {}
+                },
                 requestBody: {
                   content: {
                     'application/json': {
@@ -532,7 +845,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                           lastName: { type: 'string' },
                           email: {
                             type: 'string',
-                            description: \\"If a new email is given, the user's email verified property will be set to false.\\"
+                            description: Documentation {
+                              keyToc: '$.3',
+                              uri: '../../demo/reference/hello.yaml',
+                              contentType: 'text/yaml',
+                              charset: 'utf-8',
+                              bytes: 5719,
+                              tokens: [
+                                {
+                                  type: 'paragraph',
+                                  raw: \\"If a new email is given, the user's email verified property will be set to false.\\",
+                                  text: \\"If a new email is given, the user's email verified property will be set to false.\\",
+                                  tokens: [
+                                    {
+                                      type: 'text',
+                                      raw: \\"If a new email is given, the user's email verified property will be set to false.\\",
+                                      text: 'If a new email is given, the user&#39;s email verified property will be set to false.'
+                                    }
+                                  ]
+                                },
+                                links: [Object: null prototype] {}
+                              ],
+                              links: [Object: null prototype] {}
+                            }
                           },
                           dateOfBirth: { type: 'string' }
                         }
@@ -546,7 +881,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                       }
                     }
                   },
-                  description: 'Patch user properties to update.'
+                  description: Documentation {
+                    keyToc: '$.3',
+                    uri: '../../demo/reference/hello.yaml',
+                    contentType: 'text/yaml',
+                    charset: 'utf-8',
+                    bytes: 5719,
+                    tokens: [
+                      {
+                        type: 'paragraph',
+                        raw: 'Patch user properties to update.',
+                        text: 'Patch user properties to update.',
+                        tokens: [
+                          {
+                            type: 'text',
+                            raw: 'Patch user properties to update.',
+                            text: 'Patch user properties to update.'
+                          }
+                        ]
+                      },
+                      links: [Object: null prototype] {}
+                    ],
+                    links: [Object: null prototype] {}
+                  }
                 }
               }
             },
@@ -556,13 +913,37 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                 operationId: 'post-user',
                 responses: {
                   '200': {
-                    description: 'User Created',
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'User Created',
+                          text: 'User Created',
+                          tokens: [ { type: 'text', raw: 'User Created', text: 'User Created' } ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    },
                     content: {
                       'application/json': {
                         schema: {
                           title: 'User',
                           type: 'object',
-                          description: '',
+                          description: Documentation {
+                            keyToc: '$.3',
+                            uri: '../../demo/reference/hello.yaml',
+                            contentType: 'text/yaml',
+                            charset: 'utf-8',
+                            bytes: 5719,
+                            tokens: [ links: [Object: null prototype] {} ],
+                            links: [Object: null prototype] {}
+                          },
                           examples: [
                             {
                               id: 142,
@@ -577,7 +958,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                           properties: {
                             id: {
                               type: 'integer',
-                              description: 'Unique identifier for the given user.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'Unique identifier for the given user.',
+                                    text: 'Unique identifier for the given user.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'Unique identifier for the given user.',
+                                        text: 'Unique identifier for the given user.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             firstName: { type: 'string' },
                             lastName: { type: 'string' },
@@ -589,12 +992,56 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                             },
                             emailVerified: {
                               type: 'boolean',
-                              description: \\"Set to true if the user's email has been verified.\\"
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: \\"Set to true if the user's email has been verified.\\",
+                                    text: \\"Set to true if the user's email has been verified.\\",
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: \\"Set to true if the user's email has been verified.\\",
+                                        text: 'Set to true if the user&#39;s email has been verified.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             createDate: {
                               type: 'string',
                               format: 'date',
-                              description: 'The date that the user was created.'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'The date that the user was created.',
+                                    text: 'The date that the user was created.',
+                                    tokens: [
+                                      {
+                                        type: 'text',
+                                        raw: 'The date that the user was created.',
+                                        text: 'The date that the user was created.'
+                                      }
+                                    ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             }
                           },
                           required: [
@@ -621,8 +1068,56 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                       }
                     }
                   },
-                  '400': { description: 'Missing Required Information' },
-                  '409': { description: 'Email Already Taken' }
+                  '400': {
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'Missing Required Information',
+                          text: 'Missing Required Information',
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: 'Missing Required Information',
+                              text: 'Missing Required Information'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
+                  },
+                  '409': {
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'Email Already Taken',
+                          text: 'Email Already Taken',
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: 'Email Already Taken',
+                              text: 'Email Already Taken'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
+                  }
                 },
                 requestBody: {
                   content: {
@@ -649,9 +1144,53 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                       }
                     }
                   },
-                  description: 'Post the necessary fields for the API to create a new user.'
+                  description: Documentation {
+                    keyToc: '$.3',
+                    uri: '../../demo/reference/hello.yaml',
+                    contentType: 'text/yaml',
+                    charset: 'utf-8',
+                    bytes: 5719,
+                    tokens: [
+                      {
+                        type: 'paragraph',
+                        raw: 'Post the necessary fields for the API to create a new user.',
+                        text: 'Post the necessary fields for the API to create a new user.',
+                        tokens: [
+                          {
+                            type: 'text',
+                            raw: 'Post the necessary fields for the API to create a new user.',
+                            text: 'Post the necessary fields for the API to create a new user.'
+                          }
+                        ]
+                      },
+                      links: [Object: null prototype] {}
+                    ],
+                    links: [Object: null prototype] {}
+                  }
                 },
-                description: 'Create a new user.'
+                description: Documentation {
+                  keyToc: '$.3',
+                  uri: '../../demo/reference/hello.yaml',
+                  contentType: 'text/yaml',
+                  charset: 'utf-8',
+                  bytes: 5719,
+                  tokens: [
+                    {
+                      type: 'paragraph',
+                      raw: 'Create a new user.',
+                      text: 'Create a new user.',
+                      tokens: [
+                        {
+                          type: 'text',
+                          raw: 'Create a new user.',
+                          text: 'Create a new user.'
+                        }
+                      ]
+                    },
+                    links: [Object: null prototype] {}
+                  ],
+                  links: [Object: null prototype] {}
+                }
               }
             },
             '/car': {
@@ -660,7 +1199,23 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                 operationId: 'post-car',
                 responses: {
                   '200': {
-                    description: 'Car Section',
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'Car Section',
+                          text: 'Car Section',
+                          tokens: [ { type: 'text', raw: 'Car Section', text: 'Car Section' } ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    },
                     content: {
                       'application/json': {
                         schema: {
@@ -671,7 +1226,23 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                             roles: {
                               type: 'number',
                               title: 'roles',
-                              description: 'Roles number'
+                              description: Documentation {
+                                keyToc: '$.3',
+                                uri: '../../demo/reference/hello.yaml',
+                                contentType: 'text/yaml',
+                                charset: 'utf-8',
+                                bytes: 5719,
+                                tokens: [
+                                  {
+                                    type: 'paragraph',
+                                    raw: 'Roles number',
+                                    text: 'Roles number',
+                                    tokens: [ { type: 'text', raw: 'Roles number', text: 'Roles number' } ]
+                                  },
+                                  links: [Object: null prototype] {}
+                                ],
+                                links: [Object: null prototype] {}
+                              }
                             },
                             color: { type: 'string', enum: [ 'red', 'green' ] }
                           }
@@ -688,7 +1259,15 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               User: {
                 title: 'User',
                 type: 'object',
-                description: '',
+                description: Documentation {
+                  keyToc: '$.3',
+                  uri: '../../demo/reference/hello.yaml',
+                  contentType: 'text/yaml',
+                  charset: 'utf-8',
+                  bytes: 5719,
+                  tokens: [ links: [Object: null prototype] {} ],
+                  links: [Object: null prototype] {}
+                },
                 examples: [
                   {
                     id: 142,
@@ -703,7 +1282,29 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                 properties: {
                   id: {
                     type: 'integer',
-                    description: 'Unique identifier for the given user.'
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'Unique identifier for the given user.',
+                          text: 'Unique identifier for the given user.',
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: 'Unique identifier for the given user.',
+                              text: 'Unique identifier for the given user.'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
                   },
                   firstName: { type: 'string' },
                   lastName: { type: 'string' },
@@ -711,12 +1312,56 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                   dateOfBirth: { type: 'string', format: 'date', example: '1997-10-31' },
                   emailVerified: {
                     type: 'boolean',
-                    description: \\"Set to true if the user's email has been verified.\\"
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: \\"Set to true if the user's email has been verified.\\",
+                          text: \\"Set to true if the user's email has been verified.\\",
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: \\"Set to true if the user's email has been verified.\\",
+                              text: 'Set to true if the user&#39;s email has been verified.'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
                   },
                   createDate: {
                     type: 'string',
                     format: 'date',
-                    description: 'The date that the user was created.'
+                    description: Documentation {
+                      keyToc: '$.3',
+                      uri: '../../demo/reference/hello.yaml',
+                      contentType: 'text/yaml',
+                      charset: 'utf-8',
+                      bytes: 5719,
+                      tokens: [
+                        {
+                          type: 'paragraph',
+                          raw: 'The date that the user was created.',
+                          text: 'The date that the user was created.',
+                          tokens: [
+                            {
+                              type: 'text',
+                              raw: 'The date that the user was created.',
+                              text: 'The date that the user was created.'
+                            }
+                          ]
+                        },
+                        links: [Object: null prototype] {}
+                      ],
+                      links: [Object: null prototype] {}
+                    }
                   }
                 },
                 required: [ 'id', 'firstName', 'lastName', 'email', 'emailVerified' ]
@@ -739,7 +1384,23 @@ exports[`ReadPackage  should print a detail read package 1`] = `
               openapi: '3.0.2',
               info: {
                 title: 'API Pokemon',
-                description: 'API Pokemon',
+                description: Documentation {
+                  keyToc: '$.4.1',
+                  uri: '../../demo/reference/pokedex.yaml',
+                  contentType: 'text/yaml',
+                  charset: 'utf-8',
+                  bytes: 1481,
+                  tokens: [
+                    {
+                      type: 'paragraph',
+                      raw: 'API Pokemon',
+                      text: 'API Pokemon',
+                      tokens: [ { type: 'text', raw: 'API Pokemon', text: 'API Pokemon' } ]
+                    },
+                    links: [Object: null prototype] {}
+                  ],
+                  links: [Object: null prototype] {}
+                },
                 version: '1.0'
               },
               components: {
@@ -828,7 +1489,23 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                     },
                     responses: {
                       '200': {
-                        description: 'OK',
+                        description: Documentation {
+                          keyToc: '$.4.1',
+                          uri: '../../demo/reference/pokedex.yaml',
+                          contentType: 'text/yaml',
+                          charset: 'utf-8',
+                          bytes: 1481,
+                          tokens: [
+                            {
+                              type: 'paragraph',
+                              raw: 'OK',
+                              text: 'OK',
+                              tokens: [ { type: 'text', raw: 'OK', text: 'OK' } ]
+                            },
+                            links: [Object: null prototype] {}
+                          ],
+                          links: [Object: null prototype] {}
+                        },
                         content: {
                           'application/json': {
                             schema: {
@@ -865,7 +1542,23 @@ exports[`ReadPackage  should print a detail read package 1`] = `
                     operationId: 'get-pokedex',
                     responses: {
                       '200': {
-                        description: 'OK',
+                        description: Documentation {
+                          keyToc: '$.4.1',
+                          uri: '../../demo/reference/pokedex.yaml',
+                          contentType: 'text/yaml',
+                          charset: 'utf-8',
+                          bytes: 1481,
+                          tokens: [
+                            {
+                              type: 'paragraph',
+                              raw: 'OK',
+                              text: 'OK',
+                              tokens: [ { type: 'text', raw: 'OK', text: 'OK' } ]
+                            },
+                            links: [Object: null prototype] {}
+                          ],
+                          links: [Object: null prototype] {}
+                        },
                         content: {
                           'application/json': {
                             schema: {
@@ -908,6 +1601,2710 @@ exports[`ReadPackage  should print a detail read package 1`] = `
 }"
 `;
 
-exports[`ReadPackage  should print a detail read package 2`] = `ReadPackage {}`;
+exports[`ReadPackage  should print a detail read package 2`] = `
+Object {
+  "catdoc": "0.0.1",
+  "toc": Object {
+    "items": Array [
+      Object {
+        "items": Array [
+          Object {
+            "links": Object {
+              "reflink": Object {
+                "href": "./assets/cat-02.png",
+                "title": "das",
+              },
+            },
+            "title": "How To",
+            "tokens": Array [
+              Object {
+                "depth": 1,
+                "raw": "# How To
 
-exports[`ReadPackage  should print a detail read package 3`] = `"{}"`;
+",
+                "text": "How To",
+                "tokens": Array [
+                  Object {
+                    "raw": "How To",
+                    "text": "How To",
+                    "type": "text",
+                  },
+                ],
+                "type": "heading",
+              },
+              Object {
+                "depth": 2,
+                "raw": "## Title [a link on header](#demo-3-images)
+
+",
+                "text": "Title [a link on header](#demo-3-images)",
+                "tokens": Array [
+                  Object {
+                    "raw": "Title ",
+                    "text": "Title ",
+                    "type": "text",
+                  },
+                  Object {
+                    "href": "#demo-3-images",
+                    "raw": "[a link on header](#demo-3-images)",
+                    "text": "a link on header",
+                    "title": null,
+                    "tokens": Array [
+                      Object {
+                        "raw": "a link on header",
+                        "text": "a link on header",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "link",
+                  },
+                ],
+                "type": "heading",
+              },
+              Object {
+                "raw": "This is a demo \\"How To Doc\\"",
+                "text": "This is a demo \\"How To Doc\\"",
+                "tokens": Array [
+                  Object {
+                    "raw": "This is a demo \\"How To Doc\\"",
+                    "text": "This is a demo &quot;How To Doc&quot;",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "raw": "new Line \`code\`",
+                "text": "new Line \`code\`",
+                "tokens": Array [
+                  Object {
+                    "raw": "new Line ",
+                    "text": "new Line ",
+                    "type": "text",
+                  },
+                  Object {
+                    "raw": "\`code\`",
+                    "text": "code",
+                    "type": "codespan",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "raw": "demo code",
+                "text": "demo code",
+                "tokens": Array [
+                  Object {
+                    "raw": "demo code",
+                    "text": "demo code",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "lang": "json",
+                "raw": "\`\`\`json
+{ \\"a\\": \\"b\\" }
+\`\`\`
+
+",
+                "text": "{ \\"a\\": \\"b\\" }",
+                "type": "code",
+              },
+              Object {
+                "raw": "---
+
+",
+                "type": "hr",
+              },
+              Object {
+                "depth": 2,
+                "raw": "## Demo 2
+
+",
+                "text": "Demo 2",
+                "tokens": Array [
+                  Object {
+                    "raw": "Demo 2",
+                    "text": "Demo 2",
+                    "type": "text",
+                  },
+                ],
+                "type": "heading",
+              },
+              Object {
+                "raw": "Demo code 2",
+                "text": "Demo code 2",
+                "tokens": Array [
+                  Object {
+                    "raw": "Demo code 2",
+                    "text": "Demo code 2",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "lang": "code-write",
+                "raw": "\`\`\`code-write
+{\\"a\\":\\"b\\"}
+\`\`\`
+
+",
+                "text": "{\\"a\\":\\"b\\"}",
+                "type": "code",
+              },
+              Object {
+                "raw": "Menu:",
+                "text": "Menu:",
+                "tokens": Array [
+                  Object {
+                    "raw": "Menu:",
+                    "text": "Menu:",
+                    "type": "text",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "items": Array [
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- Hola [My Link](http://sample.com/abc/def \\"a title\\")
+",
+                    "task": false,
+                    "text": "Hola [My Link](http://sample.com/abc/def \\"a title\\")",
+                    "tokens": Array [
+                      Object {
+                        "raw": "Hola [My Link](http://sample.com/abc/def \\"a title\\")",
+                        "text": "Hola [My Link](http://sample.com/abc/def \\"a title\\")",
+                        "tokens": Array [
+                          Object {
+                            "raw": "Hola ",
+                            "text": "Hola ",
+                            "type": "text",
+                          },
+                          Object {
+                            "href": "http://sample.com/abc/def",
+                            "raw": "[My Link](http://sample.com/abc/def \\"a title\\")",
+                            "text": "My Link",
+                            "title": "a title",
+                            "tokens": Array [
+                              Object {
+                                "raw": "My Link",
+                                "text": "My Link",
+                                "type": "text",
+                              },
+                            ],
+                            "type": "link",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- Second Item on List
+
+",
+                    "task": false,
+                    "text": "Second Item on List",
+                    "tokens": Array [
+                      Object {
+                        "raw": "Second Item on List",
+                        "text": "Second Item on List",
+                        "tokens": Array [
+                          Object {
+                            "raw": "Second Item on List",
+                            "text": "Second Item on List",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                ],
+                "loose": false,
+                "ordered": false,
+                "raw": "- Hola [My Link](http://sample.com/abc/def \\"a title\\")
+- Second Item on List
+
+",
+                "start": "",
+                "type": "list",
+              },
+              Object {
+                "depth": 2,
+                "raw": "## Demo 3 Images
+
+",
+                "text": "Demo 3 Images",
+                "tokens": Array [
+                  Object {
+                    "raw": "Demo 3 Images",
+                    "text": "Demo 3 Images",
+                    "type": "text",
+                  },
+                ],
+                "type": "heading",
+              },
+              Object {
+                "raw": "![A Cat](../assets/cat-01.png \\"a text\\")",
+                "text": "![A Cat](../assets/cat-01.png \\"a text\\")",
+                "tokens": Array [
+                  Object {
+                    "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/assets/cat-01.png",
+                    "raw": "![A Cat](../assets/cat-01.png \\"a text\\")",
+                    "text": "A Cat",
+                    "title": "a text",
+                    "type": "image",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "raw": "_second cat_",
+                "text": "_second cat_",
+                "tokens": Array [
+                  Object {
+                    "raw": "_second cat_",
+                    "text": "second cat",
+                    "tokens": Array [
+                      Object {
+                        "raw": "second cat",
+                        "text": "second cat",
+                        "type": "text",
+                      },
+                    ],
+                    "type": "em",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "raw": "![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")",
+                "text": "![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")",
+                "tokens": Array [
+                  Object {
+                    "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                    "raw": "![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")",
+                    "text": "A Cat 2a",
+                    "title": "a text to cat 2a",
+                    "type": "image",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "raw": "![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")",
+                "text": "![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")",
+                "tokens": Array [
+                  Object {
+                    "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                    "raw": "![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")",
+                    "text": "A Cat 2b",
+                    "title": "a text to cat 2b",
+                    "type": "image",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "raw": "
+
+",
+                "type": "space",
+              },
+              Object {
+                "items": Array [
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- ![a link 1][reflink]
+",
+                    "task": false,
+                    "text": "![a link 1][reflink]",
+                    "tokens": Array [
+                      Object {
+                        "raw": "![a link 1][reflink]",
+                        "text": "![a link 1][reflink]",
+                        "tokens": Array [
+                          Object {
+                            "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                            "raw": "![a link 1][reflink]",
+                            "text": "a link 1",
+                            "title": "das",
+                            "type": "image",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- ![a link 2][reflink]
+",
+                    "task": false,
+                    "text": "![a link 2][reflink]",
+                    "tokens": Array [
+                      Object {
+                        "raw": "![a link 2][reflink]",
+                        "text": "![a link 2][reflink]",
+                        "tokens": Array [
+                          Object {
+                            "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                            "raw": "![a link 2][reflink]",
+                            "text": "a link 2",
+                            "title": "das",
+                            "type": "image",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- ![a link 3][reflink]
+",
+                    "task": false,
+                    "text": "![a link 3][reflink]",
+                    "tokens": Array [
+                      Object {
+                        "raw": "![a link 3][reflink]",
+                        "text": "![a link 3][reflink]",
+                        "tokens": Array [
+                          Object {
+                            "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                            "raw": "![a link 3][reflink]",
+                            "text": "a link 3",
+                            "title": "das",
+                            "type": "image",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                  Object {
+                    "checked": undefined,
+                    "loose": false,
+                    "raw": "- ![a link 4][reflink]
+
+",
+                    "task": false,
+                    "text": "![a link 4][reflink]",
+                    "tokens": Array [
+                      Object {
+                        "raw": "![a link 4][reflink]",
+                        "text": "![a link 4][reflink]",
+                        "tokens": Array [
+                          Object {
+                            "href": "/Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png",
+                            "raw": "![a link 4][reflink]",
+                            "text": "a link 4",
+                            "title": "das",
+                            "type": "image",
+                          },
+                        ],
+                        "type": "text",
+                      },
+                    ],
+                    "type": "list_item",
+                  },
+                ],
+                "loose": false,
+                "ordered": false,
+                "raw": "- ![a link 1][reflink]
+- ![a link 2][reflink]
+- ![a link 3][reflink]
+- ![a link 4][reflink]
+
+",
+                "start": "",
+                "type": "list",
+              },
+            ],
+            "type": "item",
+            "typeItem": "documentation",
+          },
+        ],
+        "title": "Documentation",
+        "type": "group",
+      },
+      Object {
+        "title": "APIS",
+        "type": "divider",
+      },
+      Object {
+        "api": Object {
+          "components": Object {
+            "schemas": Object {
+              "User": Object {
+                "description": Object {
+                  "links": Object {},
+                  "title": "Hello",
+                  "tokens": Array [],
+                  "type": "item",
+                  "typeItem": "documentation",
+                },
+                "examples": Array [
+                  Object {
+                    "dateOfBirth": "1997-10-31",
+                    "email": "alice.smith@gmail.com",
+                    "emailVerified": true,
+                    "firstName": "Alice",
+                    "id": 142,
+                    "lastName": "Smith",
+                    "signUpDate": "2019-08-24",
+                  },
+                ],
+                "properties": Object {
+                  "createDate": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "The date that the user was created.",
+                          "text": "The date that the user was created.",
+                          "tokens": Array [
+                            Object {
+                              "raw": "The date that the user was created.",
+                              "text": "The date that the user was created.",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                    "format": "date",
+                    "type": "string",
+                  },
+                  "dateOfBirth": Object {
+                    "example": "1997-10-31",
+                    "format": "date",
+                    "type": "string",
+                  },
+                  "email": Object {
+                    "format": "email",
+                    "type": "string",
+                  },
+                  "emailVerified": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Set to true if the user's email has been verified.",
+                          "text": "Set to true if the user's email has been verified.",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Set to true if the user's email has been verified.",
+                              "text": "Set to true if the user&#39;s email has been verified.",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                    "type": "boolean",
+                  },
+                  "firstName": Object {
+                    "type": "string",
+                  },
+                  "id": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Unique identifier for the given user.",
+                          "text": "Unique identifier for the given user.",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Unique identifier for the given user.",
+                              "text": "Unique identifier for the given user.",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                    "type": "integer",
+                  },
+                  "lastName": Object {
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "id",
+                  "firstName",
+                  "lastName",
+                  "email",
+                  "emailVerified",
+                ],
+                "title": "User",
+                "type": "object",
+              },
+            },
+          },
+          "info": Object {
+            "title": "hello",
+            "version": "1.0",
+          },
+          "openapi": "3.1.0",
+          "paths": Object {
+            "/car": Object {
+              "post": Object {
+                "operationId": "post-car",
+                "responses": Object {
+                  "200": Object {
+                    "content": Object {
+                      "application/json": Object {
+                        "schema": Object {
+                          "$schema": "http://json-schema.org/draft-07/schema",
+                          "properties": Object {
+                            "color": Object {
+                              "enum": Array [
+                                "red",
+                                "green",
+                              ],
+                              "type": "string",
+                            },
+                            "roles": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Roles number",
+                                    "text": "Roles number",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Roles number",
+                                        "text": "Roles number",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "title": "roles",
+                              "type": "number",
+                            },
+                          },
+                          "title": "Car",
+                          "type": "object",
+                        },
+                      },
+                    },
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Car Section",
+                          "text": "Car Section",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Car Section",
+                              "text": "Car Section",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                },
+                "summary": "Create Car",
+              },
+            },
+            "/user": Object {
+              "post": Object {
+                "description": Object {
+                  "links": Object {},
+                  "title": "Hello",
+                  "tokens": Array [
+                    Object {
+                      "raw": "Create a new user.",
+                      "text": "Create a new user.",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Create a new user.",
+                          "text": "Create a new user.",
+                          "type": "text",
+                        },
+                      ],
+                      "type": "paragraph",
+                    },
+                  ],
+                  "type": "item",
+                  "typeItem": "documentation",
+                },
+                "operationId": "post-user",
+                "requestBody": Object {
+                  "content": Object {
+                    "application/json": Object {
+                      "examples": Object {
+                        "Create User Bob Fellow": Object {
+                          "value": Object {
+                            "dateOfBirth": "1996-08-24",
+                            "email": "bob.fellow@gmail.com",
+                            "firstName": "Bob",
+                            "lastName": "Fellow",
+                          },
+                        },
+                      },
+                      "schema": Object {
+                        "properties": Object {
+                          "dateOfBirth": Object {
+                            "format": "date",
+                            "type": "string",
+                          },
+                          "email": Object {
+                            "type": "string",
+                          },
+                          "firstName": Object {
+                            "type": "string",
+                          },
+                          "lastName": Object {
+                            "type": "string",
+                          },
+                        },
+                        "required": Array [
+                          "firstName",
+                          "lastName",
+                          "email",
+                          "dateOfBirth",
+                        ],
+                        "type": "object",
+                      },
+                    },
+                  },
+                  "description": Object {
+                    "links": Object {},
+                    "title": "Hello",
+                    "tokens": Array [
+                      Object {
+                        "raw": "Post the necessary fields for the API to create a new user.",
+                        "text": "Post the necessary fields for the API to create a new user.",
+                        "tokens": Array [
+                          Object {
+                            "raw": "Post the necessary fields for the API to create a new user.",
+                            "text": "Post the necessary fields for the API to create a new user.",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "item",
+                    "typeItem": "documentation",
+                  },
+                },
+                "responses": Object {
+                  "200": Object {
+                    "content": Object {
+                      "application/json": Object {
+                        "examples": Object {
+                          "New User Bob Fellow": Object {
+                            "value": Object {
+                              "createDate": "2020-11-18",
+                              "dateOfBirth": "1996-08-24",
+                              "email": "bob.fellow@gmail.com",
+                              "emailVerified": false,
+                              "firstName": "Bob",
+                              "id": 12,
+                              "lastName": "Fellow",
+                            },
+                          },
+                        },
+                        "schema": Object {
+                          "description": Object {
+                            "links": Object {},
+                            "title": "Hello",
+                            "tokens": Array [],
+                            "type": "item",
+                            "typeItem": "documentation",
+                          },
+                          "examples": Array [
+                            Object {
+                              "dateOfBirth": "1997-10-31",
+                              "email": "alice.smith@gmail.com",
+                              "emailVerified": true,
+                              "firstName": "Alice",
+                              "id": 142,
+                              "lastName": "Smith",
+                              "signUpDate": "2019-08-24",
+                            },
+                          ],
+                          "properties": Object {
+                            "createDate": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "The date that the user was created.",
+                                    "text": "The date that the user was created.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "The date that the user was created.",
+                                        "text": "The date that the user was created.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "dateOfBirth": Object {
+                              "example": "1997-10-31",
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "email": Object {
+                              "format": "email",
+                              "type": "string",
+                            },
+                            "emailVerified": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Set to true if the user's email has been verified.",
+                                    "text": "Set to true if the user's email has been verified.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Set to true if the user's email has been verified.",
+                                        "text": "Set to true if the user&#39;s email has been verified.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "boolean",
+                            },
+                            "firstName": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Unique identifier for the given user.",
+                                    "text": "Unique identifier for the given user.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Unique identifier for the given user.",
+                                        "text": "Unique identifier for the given user.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "integer",
+                            },
+                            "lastName": Object {
+                              "type": "string",
+                            },
+                          },
+                          "required": Array [
+                            "id",
+                            "firstName",
+                            "lastName",
+                            "email",
+                            "emailVerified",
+                          ],
+                          "title": "User",
+                          "type": "object",
+                        },
+                      },
+                    },
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "User Created",
+                          "text": "User Created",
+                          "tokens": Array [
+                            Object {
+                              "raw": "User Created",
+                              "text": "User Created",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                  "400": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Missing Required Information",
+                          "text": "Missing Required Information",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Missing Required Information",
+                              "text": "Missing Required Information",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                  "409": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Email Already Taken",
+                          "text": "Email Already Taken",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Email Already Taken",
+                              "text": "Email Already Taken",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                },
+                "summary": "Create New User",
+              },
+            },
+            "/users/{userId}": Object {
+              "get": Object {
+                "description": Object {
+                  "links": Object {},
+                  "title": "Hello",
+                  "tokens": Array [
+                    Object {
+                      "raw": "Retrieve the information of the user with the matching user ID.",
+                      "text": "Retrieve the information of the user with the matching user ID.",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Retrieve the information of the user with the matching user ID.",
+                          "text": "Retrieve the information of the user with the matching user ID.",
+                          "type": "text",
+                        },
+                      ],
+                      "type": "paragraph",
+                    },
+                  ],
+                  "type": "item",
+                  "typeItem": "documentation",
+                },
+                "operationId": "get-users-userId",
+                "responses": Object {
+                  "200": Object {
+                    "content": Object {
+                      "application/json": Object {
+                        "examples": Object {
+                          "Get User Alice Smith": Object {
+                            "value": Object {
+                              "dateOfBirth": "1997-10-31",
+                              "email": "alice.smith@gmail.com",
+                              "emailVerified": true,
+                              "firstName": "Alice",
+                              "id": 142,
+                              "lastName": "Smith",
+                              "signUpDate": "2019-08-24",
+                            },
+                          },
+                        },
+                        "schema": Object {
+                          "description": Object {
+                            "links": Object {},
+                            "title": "Hello",
+                            "tokens": Array [],
+                            "type": "item",
+                            "typeItem": "documentation",
+                          },
+                          "examples": Array [
+                            Object {
+                              "dateOfBirth": "1997-10-31",
+                              "email": "alice.smith@gmail.com",
+                              "emailVerified": true,
+                              "firstName": "Alice",
+                              "id": 142,
+                              "lastName": "Smith",
+                              "signUpDate": "2019-08-24",
+                            },
+                          ],
+                          "properties": Object {
+                            "createDate": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "The date that the user was created.",
+                                    "text": "The date that the user was created.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "The date that the user was created.",
+                                        "text": "The date that the user was created.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "dateOfBirth": Object {
+                              "example": "1997-10-31",
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "email": Object {
+                              "format": "email",
+                              "type": "string",
+                            },
+                            "emailVerified": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Set to true if the user's email has been verified.",
+                                    "text": "Set to true if the user's email has been verified.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Set to true if the user's email has been verified.",
+                                        "text": "Set to true if the user&#39;s email has been verified.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "boolean",
+                            },
+                            "firstName": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Unique identifier for the given user.",
+                                    "text": "Unique identifier for the given user.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Unique identifier for the given user.",
+                                        "text": "Unique identifier for the given user.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "integer",
+                            },
+                            "lastName": Object {
+                              "type": "string",
+                            },
+                          },
+                          "required": Array [
+                            "id",
+                            "firstName",
+                            "lastName",
+                            "email",
+                            "emailVerified",
+                          ],
+                          "title": "User",
+                          "type": "object",
+                        },
+                      },
+                    },
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "User Found",
+                          "text": "User Found",
+                          "tokens": Array [
+                            Object {
+                              "raw": "User Found",
+                              "text": "User Found",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                  "404": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "User Not Found",
+                          "text": "User Not Found",
+                          "tokens": Array [
+                            Object {
+                              "raw": "User Not Found",
+                              "text": "User Not Found",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                },
+                "summary": "Get User Info by User ID",
+                "tags": Array [],
+              },
+              "parameters": Array [
+                Object {
+                  "description": Object {
+                    "links": Object {},
+                    "title": "Hello",
+                    "tokens": Array [
+                      Object {
+                        "raw": "Id of an existing user.",
+                        "text": "Id of an existing user.",
+                        "tokens": Array [
+                          Object {
+                            "raw": "Id of an existing user.",
+                            "text": "Id of an existing user.",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "item",
+                    "typeItem": "documentation",
+                  },
+                  "in": "path",
+                  "name": "userId",
+                  "required": true,
+                  "schema": Object {
+                    "type": "integer",
+                  },
+                },
+              ],
+              "patch": Object {
+                "description": Object {
+                  "links": Object {},
+                  "title": "Hello",
+                  "tokens": Array [
+                    Object {
+                      "raw": "Update the information of an existing user.",
+                      "text": "Update the information of an existing user.",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Update the information of an existing user.",
+                          "text": "Update the information of an existing user.",
+                          "type": "text",
+                        },
+                      ],
+                      "type": "paragraph",
+                    },
+                  ],
+                  "type": "item",
+                  "typeItem": "documentation",
+                },
+                "operationId": "patch-users-userId",
+                "requestBody": Object {
+                  "content": Object {
+                    "application/json": Object {
+                      "examples": Object {
+                        "Update Email": Object {
+                          "value": Object {
+                            "email": "rebecca@gmail.com",
+                          },
+                        },
+                        "Update First Name": Object {
+                          "value": Object {
+                            "firstName": "Rebecca",
+                          },
+                        },
+                        "Update Last Name & Date of Birth": Object {
+                          "value": Object {
+                            "dateOfBirth": "1985-10-02",
+                            "lastName": "Baker",
+                          },
+                        },
+                      },
+                      "schema": Object {
+                        "properties": Object {
+                          "dateOfBirth": Object {
+                            "type": "string",
+                          },
+                          "email": Object {
+                            "description": Object {
+                              "links": Object {},
+                              "title": "Hello",
+                              "tokens": Array [
+                                Object {
+                                  "raw": "If a new email is given, the user's email verified property will be set to false.",
+                                  "text": "If a new email is given, the user's email verified property will be set to false.",
+                                  "tokens": Array [
+                                    Object {
+                                      "raw": "If a new email is given, the user's email verified property will be set to false.",
+                                      "text": "If a new email is given, the user&#39;s email verified property will be set to false.",
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "type": "paragraph",
+                                },
+                              ],
+                              "type": "item",
+                              "typeItem": "documentation",
+                            },
+                            "type": "string",
+                          },
+                          "firstName": Object {
+                            "type": "string",
+                          },
+                          "lastName": Object {
+                            "type": "string",
+                          },
+                        },
+                        "type": "object",
+                      },
+                    },
+                  },
+                  "description": Object {
+                    "links": Object {},
+                    "title": "Hello",
+                    "tokens": Array [
+                      Object {
+                        "raw": "Patch user properties to update.",
+                        "text": "Patch user properties to update.",
+                        "tokens": Array [
+                          Object {
+                            "raw": "Patch user properties to update.",
+                            "text": "Patch user properties to update.",
+                            "type": "text",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "item",
+                    "typeItem": "documentation",
+                  },
+                },
+                "responses": Object {
+                  "200": Object {
+                    "content": Object {
+                      "application/json": Object {
+                        "examples": Object {
+                          "Updated User Rebecca Baker": Object {
+                            "value": Object {
+                              "createDate": "2019-08-24",
+                              "dateOfBirth": "1985-10-02",
+                              "email": "rebecca@gmail.com",
+                              "emailVerified": false,
+                              "firstName": "Rebecca",
+                              "id": 13,
+                              "lastName": "Baker",
+                            },
+                          },
+                        },
+                        "schema": Object {
+                          "description": Object {
+                            "links": Object {},
+                            "title": "Hello",
+                            "tokens": Array [],
+                            "type": "item",
+                            "typeItem": "documentation",
+                          },
+                          "examples": Array [
+                            Object {
+                              "dateOfBirth": "1997-10-31",
+                              "email": "alice.smith@gmail.com",
+                              "emailVerified": true,
+                              "firstName": "Alice",
+                              "id": 142,
+                              "lastName": "Smith",
+                              "signUpDate": "2019-08-24",
+                            },
+                          ],
+                          "properties": Object {
+                            "createDate": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "The date that the user was created.",
+                                    "text": "The date that the user was created.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "The date that the user was created.",
+                                        "text": "The date that the user was created.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "dateOfBirth": Object {
+                              "example": "1997-10-31",
+                              "format": "date",
+                              "type": "string",
+                            },
+                            "email": Object {
+                              "format": "email",
+                              "type": "string",
+                            },
+                            "emailVerified": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Set to true if the user's email has been verified.",
+                                    "text": "Set to true if the user's email has been verified.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Set to true if the user's email has been verified.",
+                                        "text": "Set to true if the user&#39;s email has been verified.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "boolean",
+                            },
+                            "firstName": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "description": Object {
+                                "links": Object {},
+                                "title": "Hello",
+                                "tokens": Array [
+                                  Object {
+                                    "raw": "Unique identifier for the given user.",
+                                    "text": "Unique identifier for the given user.",
+                                    "tokens": Array [
+                                      Object {
+                                        "raw": "Unique identifier for the given user.",
+                                        "text": "Unique identifier for the given user.",
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "item",
+                                "typeItem": "documentation",
+                              },
+                              "type": "integer",
+                            },
+                            "lastName": Object {
+                              "type": "string",
+                            },
+                          },
+                          "required": Array [
+                            "id",
+                            "firstName",
+                            "lastName",
+                            "email",
+                            "emailVerified",
+                          ],
+                          "title": "User",
+                          "type": "object",
+                        },
+                      },
+                    },
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "User Updated",
+                          "text": "User Updated",
+                          "tokens": Array [
+                            Object {
+                              "raw": "User Updated",
+                              "text": "User Updated",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                  "404": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "User Not Found",
+                          "text": "User Not Found",
+                          "tokens": Array [
+                            Object {
+                              "raw": "User Not Found",
+                              "text": "User Not Found",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                  "409": Object {
+                    "description": Object {
+                      "links": Object {},
+                      "title": "Hello",
+                      "tokens": Array [
+                        Object {
+                          "raw": "Email Already Taken",
+                          "text": "Email Already Taken",
+                          "tokens": Array [
+                            Object {
+                              "raw": "Email Already Taken",
+                              "text": "Email Already Taken",
+                              "type": "text",
+                            },
+                          ],
+                          "type": "paragraph",
+                        },
+                      ],
+                      "type": "item",
+                      "typeItem": "documentation",
+                    },
+                  },
+                },
+                "summary": "Update User Information",
+              },
+            },
+          },
+          "servers": Array [
+            Object {
+              "url": "http://localhost:3000",
+            },
+          ],
+        },
+        "title": "Hello",
+        "type": "item",
+        "typeItem": "reference",
+      },
+      Object {
+        "items": Array [
+          Object {
+            "api": Object {
+              "components": Object {
+                "schemas": Object {
+                  "PokedexDescriptor": Object {
+                    "properties": Object {
+                      "list": Object {
+                        "items": Object {
+                          "properties": Object {
+                            "id": Object {
+                              "type": "string",
+                            },
+                            "name": Object {
+                              "type": "string",
+                            },
+                            "stats": Object {
+                              "properties": Object {
+                                "life": Object {
+                                  "type": "number",
+                                },
+                                "power": Object {
+                                  "type": "number",
+                                },
+                              },
+                              "type": "object",
+                            },
+                          },
+                          "title": "asd",
+                          "type": "object",
+                        },
+                        "type": "array",
+                      },
+                      "pokedexId": Object {
+                        "type": "string",
+                      },
+                    },
+                    "type": "object",
+                  },
+                  "PokemonInfo": Object {
+                    "properties": Object {
+                      "id": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                      "stats": Object {
+                        "properties": Object {
+                          "life": Object {
+                            "type": "number",
+                          },
+                          "power": Object {
+                            "type": "number",
+                          },
+                        },
+                        "type": "object",
+                      },
+                    },
+                    "title": "asd",
+                    "type": "object",
+                  },
+                },
+              },
+              "info": Object {
+                "description": Object {
+                  "links": Object {},
+                  "title": "Read Pokedex",
+                  "tokens": Array [
+                    Object {
+                      "raw": "API Pokemon",
+                      "text": "API Pokemon",
+                      "tokens": Array [
+                        Object {
+                          "raw": "API Pokemon",
+                          "text": "API Pokemon",
+                          "type": "text",
+                        },
+                      ],
+                      "type": "paragraph",
+                    },
+                  ],
+                  "type": "item",
+                  "typeItem": "documentation",
+                },
+                "title": "API Pokemon",
+                "version": "1.0",
+              },
+              "openapi": "3.0.2",
+              "paths": Object {
+                "/{playerId}/pokedex": Object {
+                  "get": Object {
+                    "operationId": "get-pokedex",
+                    "responses": Object {
+                      "200": Object {
+                        "content": Object {
+                          "application/json": Object {
+                            "schema": Object {
+                              "properties": Object {
+                                "list": Object {
+                                  "items": Object {
+                                    "properties": Object {
+                                      "id": Object {
+                                        "type": "string",
+                                      },
+                                      "name": Object {
+                                        "type": "string",
+                                      },
+                                      "stats": Object {
+                                        "properties": Object {
+                                          "life": Object {
+                                            "type": "number",
+                                          },
+                                          "power": Object {
+                                            "type": "number",
+                                          },
+                                        },
+                                        "type": "object",
+                                      },
+                                    },
+                                    "title": "asd",
+                                    "type": "object",
+                                  },
+                                  "type": "array",
+                                },
+                                "pokedexId": Object {
+                                  "type": "string",
+                                },
+                              },
+                              "type": "object",
+                            },
+                          },
+                        },
+                        "description": Object {
+                          "links": Object {},
+                          "title": "Read Pokedex",
+                          "tokens": Array [
+                            Object {
+                              "raw": "OK",
+                              "text": "OK",
+                              "tokens": Array [
+                                Object {
+                                  "raw": "OK",
+                                  "text": "OK",
+                                  "type": "text",
+                                },
+                              ],
+                              "type": "paragraph",
+                            },
+                          ],
+                          "type": "item",
+                          "typeItem": "documentation",
+                        },
+                      },
+                    },
+                    "summary": "read schema",
+                  },
+                  "parameters": Array [
+                    Object {
+                      "in": "path",
+                      "name": "playerId",
+                      "required": true,
+                      "schema": Object {
+                        "default": "me",
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "put": Object {
+                    "operationId": "put-pokedex",
+                    "requestBody": Object {
+                      "content": Object {
+                        "application/json": Object {
+                          "schema": Object {
+                            "properties": Object {
+                              "list": Object {
+                                "items": Object {
+                                  "properties": Object {
+                                    "id": Object {
+                                      "type": "string",
+                                    },
+                                    "name": Object {
+                                      "type": "string",
+                                    },
+                                    "stats": Object {
+                                      "properties": Object {
+                                        "life": Object {
+                                          "type": "number",
+                                        },
+                                        "power": Object {
+                                          "type": "number",
+                                        },
+                                      },
+                                      "type": "object",
+                                    },
+                                  },
+                                  "title": "asd",
+                                  "type": "object",
+                                },
+                                "type": "array",
+                              },
+                              "pokedexId": Object {
+                                "type": "string",
+                              },
+                            },
+                            "type": "object",
+                          },
+                        },
+                      },
+                      "required": true,
+                    },
+                    "responses": Object {
+                      "200": Object {
+                        "content": Object {
+                          "application/json": Object {
+                            "schema": Object {
+                              "properties": Object {
+                                "list": Object {
+                                  "items": Object {
+                                    "properties": Object {
+                                      "id": Object {
+                                        "type": "string",
+                                      },
+                                      "name": Object {
+                                        "type": "string",
+                                      },
+                                      "stats": Object {
+                                        "properties": Object {
+                                          "life": Object {
+                                            "type": "number",
+                                          },
+                                          "power": Object {
+                                            "type": "number",
+                                          },
+                                        },
+                                        "type": "object",
+                                      },
+                                    },
+                                    "title": "asd",
+                                    "type": "object",
+                                  },
+                                  "type": "array",
+                                },
+                                "pokedexId": Object {
+                                  "type": "string",
+                                },
+                              },
+                              "type": "object",
+                            },
+                          },
+                        },
+                        "description": Object {
+                          "links": Object {},
+                          "title": "Read Pokedex",
+                          "tokens": Array [
+                            Object {
+                              "raw": "OK",
+                              "text": "OK",
+                              "tokens": Array [
+                                Object {
+                                  "raw": "OK",
+                                  "text": "OK",
+                                  "type": "text",
+                                },
+                              ],
+                              "type": "paragraph",
+                            },
+                          ],
+                          "type": "item",
+                          "typeItem": "documentation",
+                        },
+                      },
+                    },
+                    "summary": "update list pokedex",
+                  },
+                },
+              },
+            },
+            "title": "Read Pokedex",
+            "type": "item",
+            "typeItem": "reference",
+          },
+        ],
+        "title": "Pokedex",
+        "type": "group",
+      },
+    ],
+  },
+}
+`;
+
+exports[`ReadPackage  should print a detail read package 3`] = `
+"catdoc: 0.0.1
+toc:
+  items:
+    - type: group
+      title: Documentation
+      items:
+        - type: item
+          title: How To
+          typeItem: documentation
+          tokens:
+            - type: heading
+              raw: |+
+                # How To
+
+              depth: 1
+              text: How To
+              tokens:
+                - type: text
+                  raw: How To
+                  text: How To
+            - type: heading
+              raw: |+
+                ## Title [a link on header](#demo-3-images)
+
+              depth: 2
+              text: Title [a link on header](#demo-3-images)
+              tokens:
+                - type: text
+                  raw: \\"Title \\"
+                  text: \\"Title \\"
+                - type: link
+                  raw: \\"[a link on header](#demo-3-images)\\"
+                  href: \\"#demo-3-images\\"
+                  title: null
+                  text: a link on header
+                  tokens:
+                    - type: text
+                      raw: a link on header
+                      text: a link on header
+            - type: paragraph
+              raw: This is a demo \\"How To Doc\\"
+              text: This is a demo \\"How To Doc\\"
+              tokens:
+                - type: text
+                  raw: This is a demo \\"How To Doc\\"
+                  text: This is a demo &quot;How To Doc&quot;
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: paragraph
+              raw: new Line \`code\`
+              text: new Line \`code\`
+              tokens:
+                - type: text
+                  raw: \\"new Line \\"
+                  text: \\"new Line \\"
+                - type: codespan
+                  raw: \\"\`code\`\\"
+                  text: code
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: paragraph
+              raw: demo code
+              text: demo code
+              tokens:
+                - type: text
+                  raw: demo code
+                  text: demo code
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: code
+              raw: |+
+                \`\`\`json
+                { \\"a\\": \\"b\\" }
+                \`\`\`
+
+              lang: json
+              text: '{ \\"a\\": \\"b\\" }'
+            - type: hr
+              raw: |+
+                ---
+
+            - type: heading
+              raw: |+
+                ## Demo 2
+
+              depth: 2
+              text: Demo 2
+              tokens:
+                - type: text
+                  raw: Demo 2
+                  text: Demo 2
+            - type: paragraph
+              raw: Demo code 2
+              text: Demo code 2
+              tokens:
+                - type: text
+                  raw: Demo code 2
+                  text: Demo code 2
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: code
+              raw: |+
+                \`\`\`code-write
+                {\\"a\\":\\"b\\"}
+                \`\`\`
+
+              lang: code-write
+              text: '{\\"a\\":\\"b\\"}'
+            - type: paragraph
+              raw: \\"Menu:\\"
+              text: \\"Menu:\\"
+              tokens:
+                - type: text
+                  raw: \\"Menu:\\"
+                  text: \\"Menu:\\"
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: list
+              raw: |+
+                - Hola [My Link](http://sample.com/abc/def \\"a title\\")
+                - Second Item on List
+
+              ordered: false
+              start: \\"\\"
+              loose: false
+              items:
+                - type: list_item
+                  raw: |
+                    - Hola [My Link](http://sample.com/abc/def \\"a title\\")
+                  task: false
+                  checked: null
+                  loose: false
+                  text: Hola [My Link](http://sample.com/abc/def \\"a title\\")
+                  tokens:
+                    - type: text
+                      raw: Hola [My Link](http://sample.com/abc/def \\"a title\\")
+                      text: Hola [My Link](http://sample.com/abc/def \\"a title\\")
+                      tokens:
+                        - type: text
+                          raw: \\"Hola \\"
+                          text: \\"Hola \\"
+                        - type: link
+                          raw: '[My Link](http://sample.com/abc/def \\"a title\\")'
+                          href: http://sample.com/abc/def
+                          title: a title
+                          text: My Link
+                          tokens:
+                            - type: text
+                              raw: My Link
+                              text: My Link
+                - type: list_item
+                  raw: |+
+                    - Second Item on List
+
+                  task: false
+                  checked: null
+                  loose: false
+                  text: Second Item on List
+                  tokens:
+                    - type: text
+                      raw: Second Item on List
+                      text: Second Item on List
+                      tokens:
+                        - type: text
+                          raw: Second Item on List
+                          text: Second Item on List
+            - type: heading
+              raw: |+
+                ## Demo 3 Images
+
+              depth: 2
+              text: Demo 3 Images
+              tokens:
+                - type: text
+                  raw: Demo 3 Images
+                  text: Demo 3 Images
+            - type: paragraph
+              raw: '![A Cat](../assets/cat-01.png \\"a text\\")'
+              text: '![A Cat](../assets/cat-01.png \\"a text\\")'
+              tokens:
+                - type: image
+                  raw: '![A Cat](../assets/cat-01.png \\"a text\\")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/assets/cat-01.png
+                  title: a text
+                  text: A Cat
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: paragraph
+              raw: _second cat_
+              text: _second cat_
+              tokens:
+                - type: em
+                  raw: _second cat_
+                  text: second cat
+                  tokens:
+                    - type: text
+                      raw: second cat
+                      text: second cat
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: paragraph
+              raw: '![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")'
+              text: '![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")'
+              tokens:
+                - type: image
+                  raw: '![A Cat 2a](assets/cat-02.png \\"a text to cat 2a\\")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                  title: a text to cat 2a
+                  text: A Cat 2a
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: paragraph
+              raw: '![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")'
+              text: '![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")'
+              tokens:
+                - type: image
+                  raw: '![A Cat 2b](./assets/cat-02.png \\"a text to cat 2b\\")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                  title: a text to cat 2b
+                  text: A Cat 2b
+            - type: space
+              raw: \\"\\\\n\\\\n\\"
+            - type: list
+              raw: |+
+                - ![a link 1][reflink]
+                - ![a link 2][reflink]
+                - ![a link 3][reflink]
+                - ![a link 4][reflink]
+
+              ordered: false
+              start: \\"\\"
+              loose: false
+              items:
+                - type: list_item
+                  raw: |
+                    - ![a link 1][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: \\"![a link 1][reflink]\\"
+                  tokens:
+                    - type: text
+                      raw: \\"![a link 1][reflink]\\"
+                      text: \\"![a link 1][reflink]\\"
+                      tokens:
+                        - type: image
+                          raw: \\"![a link 1][reflink]\\"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 1
+                - type: list_item
+                  raw: |
+                    - ![a link 2][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: \\"![a link 2][reflink]\\"
+                  tokens:
+                    - type: text
+                      raw: \\"![a link 2][reflink]\\"
+                      text: \\"![a link 2][reflink]\\"
+                      tokens:
+                        - type: image
+                          raw: \\"![a link 2][reflink]\\"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 2
+                - type: list_item
+                  raw: |
+                    - ![a link 3][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: \\"![a link 3][reflink]\\"
+                  tokens:
+                    - type: text
+                      raw: \\"![a link 3][reflink]\\"
+                      text: \\"![a link 3][reflink]\\"
+                      tokens:
+                        - type: image
+                          raw: \\"![a link 3][reflink]\\"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 3
+                - type: list_item
+                  raw: |+
+                    - ![a link 4][reflink]
+
+                  task: false
+                  checked: null
+                  loose: false
+                  text: \\"![a link 4][reflink]\\"
+                  tokens:
+                    - type: text
+                      raw: \\"![a link 4][reflink]\\"
+                      text: \\"![a link 4][reflink]\\"
+                      tokens:
+                        - type: image
+                          raw: \\"![a link 4][reflink]\\"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 4
+          links:
+            reflink:
+              href: ./assets/cat-02.png
+              title: das
+    - type: divider
+      title: APIS
+    - type: item
+      title: Hello
+      typeItem: reference
+      api:
+        openapi: 3.1.0
+        info:
+          title: hello
+          version: \\"1.0\\"
+        servers:
+          - url: http://localhost:3000
+        paths:
+          \\"/users/{userId}\\":
+            parameters:
+              - schema:
+                  type: integer
+                name: userId
+                in: path
+                required: true
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Id of an existing user.
+                      text: Id of an existing user.
+                      tokens:
+                        - type: text
+                          raw: Id of an existing user.
+                          text: Id of an existing user.
+                  links: {}
+            get:
+              summary: Get User Info by User ID
+              tags: []
+              responses:
+                \\"200\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Found
+                        text: User Found
+                        tokens:
+                          - type: text
+                            raw: User Found
+                            text: User Found
+                    links: {}
+                  content:
+                    application/json:
+                      schema:
+                        &a1
+                        title: User
+                        type: object
+                        description:
+                          type: item
+                          title: Hello
+                          typeItem: documentation
+                          tokens: []
+                          links: {}
+                        examples:
+                          - id: 142
+                            firstName: Alice
+                            lastName: Smith
+                            email: alice.smith@gmail.com
+                            dateOfBirth: 1997-10-31
+                            emailVerified: true
+                            signUpDate: 2019-08-24
+                        properties:
+                          id:
+                            type: integer
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Unique identifier for the given user.
+                                  text: Unique identifier for the given user.
+                                  tokens:
+                                    - type: text
+                                      raw: Unique identifier for the given user.
+                                      text: Unique identifier for the given user.
+                              links: {}
+                          firstName:
+                            type: string
+                          lastName:
+                            type: string
+                          email:
+                            type: string
+                            format: email
+                          dateOfBirth:
+                            type: string
+                            format: date
+                            example: 1997-10-31
+                          emailVerified:
+                            type: boolean
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Set to true if the user's email has been verified.
+                                  text: Set to true if the user's email has been verified.
+                                  tokens:
+                                    - type: text
+                                      raw: Set to true if the user's email has been verified.
+                                      text: Set to true if the user&#39;s email has been verified.
+                              links: {}
+                          createDate:
+                            type: string
+                            format: date
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: The date that the user was created.
+                                  text: The date that the user was created.
+                                  tokens:
+                                    - type: text
+                                      raw: The date that the user was created.
+                                      text: The date that the user was created.
+                              links: {}
+                        required:
+                          - id
+                          - firstName
+                          - lastName
+                          - email
+                          - emailVerified
+                      examples:
+                        Get User Alice Smith:
+                          value:
+                            id: 142
+                            firstName: Alice
+                            lastName: Smith
+                            email: alice.smith@gmail.com
+                            dateOfBirth: 1997-10-31
+                            emailVerified: true
+                            signUpDate: 2019-08-24
+                \\"404\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Not Found
+                        text: User Not Found
+                        tokens:
+                          - type: text
+                            raw: User Not Found
+                            text: User Not Found
+                    links: {}
+              operationId: get-users-userId
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Retrieve the information of the user with the matching user ID.
+                    text: Retrieve the information of the user with the matching user ID.
+                    tokens:
+                      - type: text
+                        raw: Retrieve the information of the user with the matching user ID.
+                        text: Retrieve the information of the user with the matching user ID.
+                links: {}
+            patch:
+              summary: Update User Information
+              operationId: patch-users-userId
+              responses:
+                \\"200\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Updated
+                        text: User Updated
+                        tokens:
+                          - type: text
+                            raw: User Updated
+                            text: User Updated
+                    links: {}
+                  content:
+                    application/json:
+                      schema: *a1
+                      examples:
+                        Updated User Rebecca Baker:
+                          value:
+                            id: 13
+                            firstName: Rebecca
+                            lastName: Baker
+                            email: rebecca@gmail.com
+                            dateOfBirth: 1985-10-02
+                            emailVerified: false
+                            createDate: 2019-08-24
+                \\"404\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Not Found
+                        text: User Not Found
+                        tokens:
+                          - type: text
+                            raw: User Not Found
+                            text: User Not Found
+                    links: {}
+                \\"409\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Email Already Taken
+                        text: Email Already Taken
+                        tokens:
+                          - type: text
+                            raw: Email Already Taken
+                            text: Email Already Taken
+                    links: {}
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Update the information of an existing user.
+                    text: Update the information of an existing user.
+                    tokens:
+                      - type: text
+                        raw: Update the information of an existing user.
+                        text: Update the information of an existing user.
+                links: {}
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        email:
+                          type: string
+                          description:
+                            type: item
+                            title: Hello
+                            typeItem: documentation
+                            tokens:
+                              - type: paragraph
+                                raw: If a new email is given, the user's email verified property will be set to
+                                  false.
+                                text: If a new email is given, the user's email verified property will be set to
+                                  false.
+                                tokens:
+                                  - type: text
+                                    raw: If a new email is given, the user's email verified property will be set to
+                                      false.
+                                    text: If a new email is given, the user&#39;s email verified property will be
+                                      set to false.
+                            links: {}
+                        dateOfBirth:
+                          type: string
+                    examples:
+                      Update First Name:
+                        value:
+                          firstName: Rebecca
+                      Update Email:
+                        value:
+                          email: rebecca@gmail.com
+                      Update Last Name & Date of Birth:
+                        value:
+                          lastName: Baker
+                          dateOfBirth: 1985-10-02
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Patch user properties to update.
+                      text: Patch user properties to update.
+                      tokens:
+                        - type: text
+                          raw: Patch user properties to update.
+                          text: Patch user properties to update.
+                  links: {}
+          /user:
+            post:
+              summary: Create New User
+              operationId: post-user
+              responses:
+                \\"200\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Created
+                        text: User Created
+                        tokens:
+                          - type: text
+                            raw: User Created
+                            text: User Created
+                    links: {}
+                  content:
+                    application/json:
+                      schema: *a1
+                      examples:
+                        New User Bob Fellow:
+                          value:
+                            id: 12
+                            firstName: Bob
+                            lastName: Fellow
+                            email: bob.fellow@gmail.com
+                            dateOfBirth: 1996-08-24
+                            emailVerified: false
+                            createDate: 2020-11-18
+                \\"400\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Missing Required Information
+                        text: Missing Required Information
+                        tokens:
+                          - type: text
+                            raw: Missing Required Information
+                            text: Missing Required Information
+                    links: {}
+                \\"409\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Email Already Taken
+                        text: Email Already Taken
+                        tokens:
+                          - type: text
+                            raw: Email Already Taken
+                            text: Email Already Taken
+                    links: {}
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        email:
+                          type: string
+                        dateOfBirth:
+                          type: string
+                          format: date
+                      required:
+                        - firstName
+                        - lastName
+                        - email
+                        - dateOfBirth
+                    examples:
+                      Create User Bob Fellow:
+                        value:
+                          firstName: Bob
+                          lastName: Fellow
+                          email: bob.fellow@gmail.com
+                          dateOfBirth: 1996-08-24
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Post the necessary fields for the API to create a new user.
+                      text: Post the necessary fields for the API to create a new user.
+                      tokens:
+                        - type: text
+                          raw: Post the necessary fields for the API to create a new user.
+                          text: Post the necessary fields for the API to create a new user.
+                  links: {}
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Create a new user.
+                    text: Create a new user.
+                    tokens:
+                      - type: text
+                        raw: Create a new user.
+                        text: Create a new user.
+                links: {}
+          /car:
+            post:
+              summary: Create Car
+              operationId: post-car
+              responses:
+                \\"200\\":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Car Section
+                        text: Car Section
+                        tokens:
+                          - type: text
+                            raw: Car Section
+                            text: Car Section
+                    links: {}
+                  content:
+                    application/json:
+                      schema:
+                        $schema: http://json-schema.org/draft-07/schema
+                        type: object
+                        title: Car
+                        properties:
+                          roles:
+                            type: number
+                            title: roles
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Roles number
+                                  text: Roles number
+                                  tokens:
+                                    - type: text
+                                      raw: Roles number
+                                      text: Roles number
+                              links: {}
+                          color:
+                            type: string
+                            enum:
+                              - red
+                              - green
+        components:
+          schemas:
+            User: *a1
+    - type: group
+      title: Pokedex
+      items:
+        - type: item
+          title: Read Pokedex
+          typeItem: reference
+          api:
+            openapi: 3.0.2
+            info:
+              title: API Pokemon
+              description:
+                type: item
+                title: Read Pokedex
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: API Pokemon
+                    text: API Pokemon
+                    tokens:
+                      - type: text
+                        raw: API Pokemon
+                        text: API Pokemon
+                links: {}
+              version: \\"1.0\\"
+            components:
+              schemas:
+                PokemonInfo:
+                  &a2
+                  title: asd
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    stats:
+                      type: object
+                      properties:
+                        power:
+                          type: number
+                        life:
+                          type: number
+                PokedexDescriptor:
+                  &a3
+                  type: object
+                  properties:
+                    pokedexId:
+                      type: string
+                    list:
+                      type: array
+                      items: *a2
+            paths:
+              \\"/{playerId}/pokedex\\":
+                parameters:
+                  - name: playerId
+                    required: true
+                    in: path
+                    schema:
+                      type: string
+                      default: me
+                put:
+                  summary: update list pokedex
+                  operationId: put-pokedex
+                  requestBody:
+                    required: true
+                    content:
+                      application/json:
+                        schema: *a3
+                  responses:
+                    \\"200\\":
+                      description:
+                        type: item
+                        title: Read Pokedex
+                        typeItem: documentation
+                        tokens:
+                          - type: paragraph
+                            raw: OK
+                            text: OK
+                            tokens:
+                              - type: text
+                                raw: OK
+                                text: OK
+                        links: {}
+                      content:
+                        application/json:
+                          schema: *a3
+                get:
+                  summary: read schema
+                  operationId: get-pokedex
+                  responses:
+                    \\"200\\":
+                      description:
+                        type: item
+                        title: Read Pokedex
+                        typeItem: documentation
+                        tokens:
+                          - type: paragraph
+                            raw: OK
+                            text: OK
+                            tokens:
+                              - type: text
+                                raw: OK
+                                text: OK
+                        links: {}
+                      content:
+                        application/json:
+                          schema: *a3
+"
+`;

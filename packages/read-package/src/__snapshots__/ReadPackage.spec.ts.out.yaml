@@ -1,0 +1,877 @@
+catdoc: 0.0.1
+toc:
+  items:
+    - type: group
+      title: Documentation
+      items:
+        - type: item
+          title: How To
+          typeItem: documentation
+          tokens:
+            - type: heading
+              raw: |+
+                # How To
+
+              depth: 1
+              text: How To
+              tokens:
+                - type: text
+                  raw: How To
+                  text: How To
+            - type: heading
+              raw: |+
+                ## Title [a link on header](#demo-3-images)
+
+              depth: 2
+              text: Title [a link on header](#demo-3-images)
+              tokens:
+                - type: text
+                  raw: "Title "
+                  text: "Title "
+                - type: link
+                  raw: "[a link on header](#demo-3-images)"
+                  href: "#demo-3-images"
+                  title: null
+                  text: a link on header
+                  tokens:
+                    - type: text
+                      raw: a link on header
+                      text: a link on header
+            - type: paragraph
+              raw: This is a demo "How To Doc"
+              text: This is a demo "How To Doc"
+              tokens:
+                - type: text
+                  raw: This is a demo "How To Doc"
+                  text: This is a demo &quot;How To Doc&quot;
+            - type: space
+              raw: "\n\n"
+            - type: paragraph
+              raw: new Line `code`
+              text: new Line `code`
+              tokens:
+                - type: text
+                  raw: "new Line "
+                  text: "new Line "
+                - type: codespan
+                  raw: "`code`"
+                  text: code
+            - type: space
+              raw: "\n\n"
+            - type: paragraph
+              raw: demo code
+              text: demo code
+              tokens:
+                - type: text
+                  raw: demo code
+                  text: demo code
+            - type: space
+              raw: "\n\n"
+            - type: code
+              raw: |+
+                ```json
+                { "a": "b" }
+                ```
+
+              lang: json
+              text: '{ "a": "b" }'
+            - type: hr
+              raw: |+
+                ---
+
+            - type: heading
+              raw: |+
+                ## Demo 2
+
+              depth: 2
+              text: Demo 2
+              tokens:
+                - type: text
+                  raw: Demo 2
+                  text: Demo 2
+            - type: paragraph
+              raw: Demo code 2
+              text: Demo code 2
+              tokens:
+                - type: text
+                  raw: Demo code 2
+                  text: Demo code 2
+            - type: space
+              raw: "\n\n"
+            - type: code
+              raw: |+
+                ```code-write
+                {"a":"b"}
+                ```
+
+              lang: code-write
+              text: '{"a":"b"}'
+            - type: paragraph
+              raw: "Menu:"
+              text: "Menu:"
+              tokens:
+                - type: text
+                  raw: "Menu:"
+                  text: "Menu:"
+            - type: space
+              raw: "\n\n"
+            - type: list
+              raw: |+
+                - Hola [My Link](http://sample.com/abc/def "a title")
+                - Second Item on List
+
+              ordered: false
+              start: ""
+              loose: false
+              items:
+                - type: list_item
+                  raw: |
+                    - Hola [My Link](http://sample.com/abc/def "a title")
+                  task: false
+                  checked: null
+                  loose: false
+                  text: Hola [My Link](http://sample.com/abc/def "a title")
+                  tokens:
+                    - type: text
+                      raw: Hola [My Link](http://sample.com/abc/def "a title")
+                      text: Hola [My Link](http://sample.com/abc/def "a title")
+                      tokens:
+                        - type: text
+                          raw: "Hola "
+                          text: "Hola "
+                        - type: link
+                          raw: '[My Link](http://sample.com/abc/def "a title")'
+                          href: http://sample.com/abc/def
+                          title: a title
+                          text: My Link
+                          tokens:
+                            - type: text
+                              raw: My Link
+                              text: My Link
+                - type: list_item
+                  raw: |+
+                    - Second Item on List
+
+                  task: false
+                  checked: null
+                  loose: false
+                  text: Second Item on List
+                  tokens:
+                    - type: text
+                      raw: Second Item on List
+                      text: Second Item on List
+                      tokens:
+                        - type: text
+                          raw: Second Item on List
+                          text: Second Item on List
+            - type: heading
+              raw: |+
+                ## Demo 3 Images
+
+              depth: 2
+              text: Demo 3 Images
+              tokens:
+                - type: text
+                  raw: Demo 3 Images
+                  text: Demo 3 Images
+            - type: paragraph
+              raw: '![A Cat](../assets/cat-01.png "a text")'
+              text: '![A Cat](../assets/cat-01.png "a text")'
+              tokens:
+                - type: image
+                  raw: '![A Cat](../assets/cat-01.png "a text")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/assets/cat-01.png
+                  title: a text
+                  text: A Cat
+            - type: space
+              raw: "\n\n"
+            - type: paragraph
+              raw: _second cat_
+              text: _second cat_
+              tokens:
+                - type: em
+                  raw: _second cat_
+                  text: second cat
+                  tokens:
+                    - type: text
+                      raw: second cat
+                      text: second cat
+            - type: space
+              raw: "\n\n"
+            - type: paragraph
+              raw: '![A Cat 2a](assets/cat-02.png "a text to cat 2a")'
+              text: '![A Cat 2a](assets/cat-02.png "a text to cat 2a")'
+              tokens:
+                - type: image
+                  raw: '![A Cat 2a](assets/cat-02.png "a text to cat 2a")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                  title: a text to cat 2a
+                  text: A Cat 2a
+            - type: space
+              raw: "\n\n"
+            - type: paragraph
+              raw: '![A Cat 2b](./assets/cat-02.png "a text to cat 2b")'
+              text: '![A Cat 2b](./assets/cat-02.png "a text to cat 2b")'
+              tokens:
+                - type: image
+                  raw: '![A Cat 2b](./assets/cat-02.png "a text to cat 2b")'
+                  href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                  title: a text to cat 2b
+                  text: A Cat 2b
+            - type: space
+              raw: "\n\n"
+            - type: list
+              raw: |+
+                - ![a link 1][reflink]
+                - ![a link 2][reflink]
+                - ![a link 3][reflink]
+                - ![a link 4][reflink]
+
+              ordered: false
+              start: ""
+              loose: false
+              items:
+                - type: list_item
+                  raw: |
+                    - ![a link 1][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: "![a link 1][reflink]"
+                  tokens:
+                    - type: text
+                      raw: "![a link 1][reflink]"
+                      text: "![a link 1][reflink]"
+                      tokens:
+                        - type: image
+                          raw: "![a link 1][reflink]"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 1
+                - type: list_item
+                  raw: |
+                    - ![a link 2][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: "![a link 2][reflink]"
+                  tokens:
+                    - type: text
+                      raw: "![a link 2][reflink]"
+                      text: "![a link 2][reflink]"
+                      tokens:
+                        - type: image
+                          raw: "![a link 2][reflink]"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 2
+                - type: list_item
+                  raw: |
+                    - ![a link 3][reflink]
+                  task: false
+                  checked: null
+                  loose: false
+                  text: "![a link 3][reflink]"
+                  tokens:
+                    - type: text
+                      raw: "![a link 3][reflink]"
+                      text: "![a link 3][reflink]"
+                      tokens:
+                        - type: image
+                          raw: "![a link 3][reflink]"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 3
+                - type: list_item
+                  raw: |+
+                    - ![a link 4][reflink]
+
+                  task: false
+                  checked: null
+                  loose: false
+                  text: "![a link 4][reflink]"
+                  tokens:
+                    - type: text
+                      raw: "![a link 4][reflink]"
+                      text: "![a link 4][reflink]"
+                      tokens:
+                        - type: image
+                          raw: "![a link 4][reflink]"
+                          href: /Users/jondotsoy/repositories/jondotsoy/catdoc/demo/docs/assets/cat-02.png
+                          title: das
+                          text: a link 4
+          links:
+            reflink:
+              href: ./assets/cat-02.png
+              title: das
+    - type: divider
+      title: APIS
+    - type: item
+      title: Hello
+      typeItem: reference
+      api:
+        openapi: 3.1.0
+        info:
+          title: hello
+          version: "1.0"
+        servers:
+          - url: http://localhost:3000
+        paths:
+          "/users/{userId}":
+            parameters:
+              - schema:
+                  type: integer
+                name: userId
+                in: path
+                required: true
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Id of an existing user.
+                      text: Id of an existing user.
+                      tokens:
+                        - type: text
+                          raw: Id of an existing user.
+                          text: Id of an existing user.
+                  links: {}
+            get:
+              summary: Get User Info by User ID
+              tags: []
+              responses:
+                "200":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Found
+                        text: User Found
+                        tokens:
+                          - type: text
+                            raw: User Found
+                            text: User Found
+                    links: {}
+                  content:
+                    application/json:
+                      schema: &a1
+                        title: User
+                        type: object
+                        description:
+                          type: item
+                          title: Hello
+                          typeItem: documentation
+                          tokens: []
+                          links: {}
+                        examples:
+                          - id: 142
+                            firstName: Alice
+                            lastName: Smith
+                            email: alice.smith@gmail.com
+                            dateOfBirth: 1997-10-31
+                            emailVerified: true
+                            signUpDate: 2019-08-24
+                        properties:
+                          id:
+                            type: integer
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Unique identifier for the given user.
+                                  text: Unique identifier for the given user.
+                                  tokens:
+                                    - type: text
+                                      raw: Unique identifier for the given user.
+                                      text: Unique identifier for the given user.
+                              links: {}
+                          firstName:
+                            type: string
+                          lastName:
+                            type: string
+                          email:
+                            type: string
+                            format: email
+                          dateOfBirth:
+                            type: string
+                            format: date
+                            example: 1997-10-31
+                          emailVerified:
+                            type: boolean
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Set to true if the user's email has been verified.
+                                  text: Set to true if the user's email has been verified.
+                                  tokens:
+                                    - type: text
+                                      raw: Set to true if the user's email has been verified.
+                                      text: Set to true if the user&#39;s email has been verified.
+                              links: {}
+                          createDate:
+                            type: string
+                            format: date
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: The date that the user was created.
+                                  text: The date that the user was created.
+                                  tokens:
+                                    - type: text
+                                      raw: The date that the user was created.
+                                      text: The date that the user was created.
+                              links: {}
+                        required:
+                          - id
+                          - firstName
+                          - lastName
+                          - email
+                          - emailVerified
+                      examples:
+                        Get User Alice Smith:
+                          value:
+                            id: 142
+                            firstName: Alice
+                            lastName: Smith
+                            email: alice.smith@gmail.com
+                            dateOfBirth: 1997-10-31
+                            emailVerified: true
+                            signUpDate: 2019-08-24
+                "404":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Not Found
+                        text: User Not Found
+                        tokens:
+                          - type: text
+                            raw: User Not Found
+                            text: User Not Found
+                    links: {}
+              operationId: get-users-userId
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Retrieve the information of the user with the matching user ID.
+                    text: Retrieve the information of the user with the matching user ID.
+                    tokens:
+                      - type: text
+                        raw: Retrieve the information of the user with the matching user ID.
+                        text: Retrieve the information of the user with the matching user ID.
+                links: {}
+            patch:
+              summary: Update User Information
+              operationId: patch-users-userId
+              responses:
+                "200":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Updated
+                        text: User Updated
+                        tokens:
+                          - type: text
+                            raw: User Updated
+                            text: User Updated
+                    links: {}
+                  content:
+                    application/json:
+                      schema: *a1
+                      examples:
+                        Updated User Rebecca Baker:
+                          value:
+                            id: 13
+                            firstName: Rebecca
+                            lastName: Baker
+                            email: rebecca@gmail.com
+                            dateOfBirth: 1985-10-02
+                            emailVerified: false
+                            createDate: 2019-08-24
+                "404":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Not Found
+                        text: User Not Found
+                        tokens:
+                          - type: text
+                            raw: User Not Found
+                            text: User Not Found
+                    links: {}
+                "409":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Email Already Taken
+                        text: Email Already Taken
+                        tokens:
+                          - type: text
+                            raw: Email Already Taken
+                            text: Email Already Taken
+                    links: {}
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Update the information of an existing user.
+                    text: Update the information of an existing user.
+                    tokens:
+                      - type: text
+                        raw: Update the information of an existing user.
+                        text: Update the information of an existing user.
+                links: {}
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        email:
+                          type: string
+                          description:
+                            type: item
+                            title: Hello
+                            typeItem: documentation
+                            tokens:
+                              - type: paragraph
+                                raw:
+                                  If a new email is given, the user's email verified property will be set to
+                                  false.
+                                text:
+                                  If a new email is given, the user's email verified property will be set to
+                                  false.
+                                tokens:
+                                  - type: text
+                                    raw:
+                                      If a new email is given, the user's email verified property will be set to
+                                      false.
+                                    text:
+                                      If a new email is given, the user&#39;s email verified property will be
+                                      set to false.
+                            links: {}
+                        dateOfBirth:
+                          type: string
+                    examples:
+                      Update First Name:
+                        value:
+                          firstName: Rebecca
+                      Update Email:
+                        value:
+                          email: rebecca@gmail.com
+                      Update Last Name & Date of Birth:
+                        value:
+                          lastName: Baker
+                          dateOfBirth: 1985-10-02
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Patch user properties to update.
+                      text: Patch user properties to update.
+                      tokens:
+                        - type: text
+                          raw: Patch user properties to update.
+                          text: Patch user properties to update.
+                  links: {}
+          /user:
+            post:
+              summary: Create New User
+              operationId: post-user
+              responses:
+                "200":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: User Created
+                        text: User Created
+                        tokens:
+                          - type: text
+                            raw: User Created
+                            text: User Created
+                    links: {}
+                  content:
+                    application/json:
+                      schema: *a1
+                      examples:
+                        New User Bob Fellow:
+                          value:
+                            id: 12
+                            firstName: Bob
+                            lastName: Fellow
+                            email: bob.fellow@gmail.com
+                            dateOfBirth: 1996-08-24
+                            emailVerified: false
+                            createDate: 2020-11-18
+                "400":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Missing Required Information
+                        text: Missing Required Information
+                        tokens:
+                          - type: text
+                            raw: Missing Required Information
+                            text: Missing Required Information
+                    links: {}
+                "409":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Email Already Taken
+                        text: Email Already Taken
+                        tokens:
+                          - type: text
+                            raw: Email Already Taken
+                            text: Email Already Taken
+                    links: {}
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        email:
+                          type: string
+                        dateOfBirth:
+                          type: string
+                          format: date
+                      required:
+                        - firstName
+                        - lastName
+                        - email
+                        - dateOfBirth
+                    examples:
+                      Create User Bob Fellow:
+                        value:
+                          firstName: Bob
+                          lastName: Fellow
+                          email: bob.fellow@gmail.com
+                          dateOfBirth: 1996-08-24
+                description:
+                  type: item
+                  title: Hello
+                  typeItem: documentation
+                  tokens:
+                    - type: paragraph
+                      raw: Post the necessary fields for the API to create a new user.
+                      text: Post the necessary fields for the API to create a new user.
+                      tokens:
+                        - type: text
+                          raw: Post the necessary fields for the API to create a new user.
+                          text: Post the necessary fields for the API to create a new user.
+                  links: {}
+              description:
+                type: item
+                title: Hello
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: Create a new user.
+                    text: Create a new user.
+                    tokens:
+                      - type: text
+                        raw: Create a new user.
+                        text: Create a new user.
+                links: {}
+          /car:
+            post:
+              summary: Create Car
+              operationId: post-car
+              responses:
+                "200":
+                  description:
+                    type: item
+                    title: Hello
+                    typeItem: documentation
+                    tokens:
+                      - type: paragraph
+                        raw: Car Section
+                        text: Car Section
+                        tokens:
+                          - type: text
+                            raw: Car Section
+                            text: Car Section
+                    links: {}
+                  content:
+                    application/json:
+                      schema:
+                        $schema: http://json-schema.org/draft-07/schema
+                        type: object
+                        title: Car
+                        properties:
+                          roles:
+                            type: number
+                            title: roles
+                            description:
+                              type: item
+                              title: Hello
+                              typeItem: documentation
+                              tokens:
+                                - type: paragraph
+                                  raw: Roles number
+                                  text: Roles number
+                                  tokens:
+                                    - type: text
+                                      raw: Roles number
+                                      text: Roles number
+                              links: {}
+                          color:
+                            type: string
+                            enum:
+                              - red
+                              - green
+        components:
+          schemas:
+            User: *a1
+    - type: group
+      title: Pokedex
+      items:
+        - type: item
+          title: Read Pokedex
+          typeItem: reference
+          api:
+            openapi: 3.0.2
+            info:
+              title: API Pokemon
+              description:
+                type: item
+                title: Read Pokedex
+                typeItem: documentation
+                tokens:
+                  - type: paragraph
+                    raw: API Pokemon
+                    text: API Pokemon
+                    tokens:
+                      - type: text
+                        raw: API Pokemon
+                        text: API Pokemon
+                links: {}
+              version: "1.0"
+            components:
+              schemas:
+                PokemonInfo: &a2
+                  title: asd
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    stats:
+                      type: object
+                      properties:
+                        power:
+                          type: number
+                        life:
+                          type: number
+                PokedexDescriptor: &a3
+                  type: object
+                  properties:
+                    pokedexId:
+                      type: string
+                    list:
+                      type: array
+                      items: *a2
+            paths:
+              "/{playerId}/pokedex":
+                parameters:
+                  - name: playerId
+                    required: true
+                    in: path
+                    schema:
+                      type: string
+                      default: me
+                put:
+                  summary: update list pokedex
+                  operationId: put-pokedex
+                  requestBody:
+                    required: true
+                    content:
+                      application/json:
+                        schema: *a3
+                  responses:
+                    "200":
+                      description:
+                        type: item
+                        title: Read Pokedex
+                        typeItem: documentation
+                        tokens:
+                          - type: paragraph
+                            raw: OK
+                            text: OK
+                            tokens:
+                              - type: text
+                                raw: OK
+                                text: OK
+                        links: {}
+                      content:
+                        application/json:
+                          schema: *a3
+                get:
+                  summary: read schema
+                  operationId: get-pokedex
+                  responses:
+                    "200":
+                      description:
+                        type: item
+                        title: Read Pokedex
+                        typeItem: documentation
+                        tokens:
+                          - type: paragraph
+                            raw: OK
+                            text: OK
+                            tokens:
+                              - type: text
+                                raw: OK
+                                text: OK
+                        links: {}
+                      content:
+                        application/json:
+                          schema: *a3

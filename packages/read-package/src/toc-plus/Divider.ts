@@ -11,7 +11,10 @@ export class Divider implements Common<toc.Divider> {
   }
 
   toJSON(): any {
-    return new (class Divider {})()
+    return {
+      type: this.type,
+      title: this.title,
+    }
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {

@@ -5,15 +5,9 @@ import { Documentation } from "./Documentation"
 import path from "path"
 import util from "util"
 import fs from "fs/promises"
+import { format } from "./format"
 
-const format = (format?: any, ...param: any[]) =>
-  util.formatWithOptions(
-    { depth: Infinity, maxArrayLength: Infinity },
-    format,
-    ...param
-  )
-
-describe.only("Documentation", () => {
+describe("Documentation", () => {
   it("snapshot format", async () => {
     const { doc } = await createDoc()
 

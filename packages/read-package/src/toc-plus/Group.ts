@@ -16,7 +16,11 @@ export class Group implements Common<toc.Group> {
   }
 
   toJSON(): any {
-    return new (class Group {})()
+    return {
+      type: this.type,
+      title: this.title,
+      items: this.items,
+    }
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {

@@ -89,8 +89,12 @@ export class Documentation extends Item {
   html?: string
   links?: TokensList["links"]
 
+  async readPayloadMd() {
+    return await fs.readFile(this.uri, this.charset)
+  }
+
   async prepare() {
-    const payloadMd = await fs.readFile(this.uri, this.charset)
+    const payloadMd = await this.readPayloadMd()
     const tokens = marked.lexer(payloadMd)
 
     walkTokens(tokens, (token) => {
@@ -110,7 +114,9 @@ export class Documentation extends Item {
 
   toJSON(): any {
     return {
-      $$type: "Documentation",
+      type: this.type,
+      title: this.title,
+      typeItem: "documentation",
       tokens: this.tokens,
       links: this.links,
     }
@@ -126,5 +132,20 @@ export class Documentation extends Item {
       tokens: this.tokens,
       links: this.links,
     })}`
+  }
+}
+
+export class DocumentationInline extends Documentation {
+  private payloadInline?: string
+
+  writePayloadMd(data: string) {
+    this.payloadInline = data
+  }
+
+  async readPayloadMd() {
+    // console.log(this.payloadInline)
+    if (this.payloadInline === undefined)
+      throw new Error(`Require call DocumentationInline.writePayloadMd(data)`)
+    return this.payloadInline
   }
 }

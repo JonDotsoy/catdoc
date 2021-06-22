@@ -4,6 +4,9 @@ import util from "util"
 import path from "path"
 
 export class Item implements Common<toc.Item> {
+  readonly type = this._item.type
+  readonly title = this._item.title
+
   constructor(
     readonly keyToc: string,
     readonly _item: toc.Item,
@@ -14,7 +17,10 @@ export class Item implements Common<toc.Item> {
   ) {}
 
   toJSON(): any {
-    return new (class Item {})()
+    return {
+      type: this.type,
+      title: this.title,
+    }
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {

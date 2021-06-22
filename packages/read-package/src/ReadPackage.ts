@@ -4,11 +4,12 @@ import once from "lodash/once"
 import { ReadToc } from "./lib/iterUris"
 import path from "path"
 import { TOCFormats } from "./dto/TOCFormats"
-import * as TocPlus from "./toc-plus"
 import * as Item from "./toc-plus/Item"
 import util from "util"
 
 export class ReadPackage {
+  version: string = "0.0.1"
+
   pathLike: string
   toc: ReadToc | undefined
 
@@ -88,7 +89,10 @@ export class ReadPackage {
   }
 
   toJSON(): any {
-    return new (class ReadPackage {})()
+    return {
+      catdoc: this.version,
+      toc: this.toc,
+    }
   }
 
   [util.inspect.custom]: util.CustomInspectFunction = (depth, options) => {
